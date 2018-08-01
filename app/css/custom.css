@@ -999,7 +999,14 @@ body > .header .navbar .sidebar-toggle i {
 
 .clickable {
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
+  position: relative;
+  top: 1px;
+}
+
+.removecard {
+  cursor: pointer;
+  font-size: 11px;
 }
 
 .card-header > span {
