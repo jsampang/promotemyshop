@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="mt-3">    
+              <span class="coins">        
+                <img src="img/rewards.png" alt="rewards" data-alt="img/rewards.gif">       
+              </span>
+              <span class="text-white">10,000 pts</span>     
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Welcome User <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="https://promotemyshop.com/admin/my-settings" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+
+            <ul class="navigation mt-3">
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span class="mm-text ">My Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-products.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="earn-credits.html">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <span class="mm-text ">Earn Credits</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-promotions.html">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="mm-text ">My Promotions</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-coins"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>
+              <li>
+                <a href="my-settings.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">My Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Earn Credits</h1>
+        <ol class="breadcrumb">
+          <li class="active"><i class="fas fa-hand-holding-heart fa-fw"></i> Earn Credits
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Promote this products</h4>
+              </div>
+              <div class="card-body">
+                <div class="header-object">
+                  <span class="option-search float-right d-none d-sm-block">
+                    <span class="search-wrapper">
+                      <input type="text" placeholder="Search here"><i class="fas fa-search"></i>
+                    </span>
+                  </span>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-bordered mt-3" id="table">
+                    <thead>
+                      <tr class="filters">
+                        <th width="10%">&nbsp;</th>
+                        <th width="10%" class="text-center">Photo</th>
+                        <th width="30%" class="text-center">Description</th>
+                        <th width="20%" class="text-center">Social Media</th>
+                        <th width="20%" class="text-center">What</th>
+                        <th width="10%" class="text-center">Rewards</th>
+                      </tr>
+                    </thead>
+                    <tbody class="promote-list">
+                      <!-- item 1 -->
+                      <tr>
+                        <td class="text-center">
+                          <div class="submit-container">
+                            <span v-show="loaded"><i class="fas fa-check fa-3x text-info"></i></span>
+                          </div>
+                        </td>
+                        <!--onclick="document.location='#'" style="cursor:pointer" data-toggle="modal" data-target="#modal-product-detail01"-->
+                        <td>
+                          <a href="#" data-toggle="modal" data-target="#modal-product-detail01">
+                            <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg?version=1" width="100px">
+                          </a>
+                        </td>
+                        <td>Puppy Invitations - Puppy Birthday Party Invitations - Puppy Themed Party Invitations - Dog Birthday - INSTANT DOWNLOAD - Edit NOW!!</td>
+                        <td class="table-category text-center ">
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/facebook-icon.png" alt="Facebook" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/twitter-icon.png" alt="Twitter" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox2" value="option2" checked>
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/pinterest-icon.png" alt="Pinterest" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox3" value="option3" checked>
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/etsy-icon.png" alt="Etsy" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox4" value="option4" checked>
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/instagram-icon.png" alt="Instagram" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox5" value="option5" checked>
+                            </div>
+                          </label>
+
+                        </td>
+                        <td>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Create new post
+                            </label>
+                          </div>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Share post
+                            </label>
+                          </div>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Like post
+                            </label>
+                          </div>
+                        </td>
+                        <td class="text-center font-weight-bold">300 pts</td>
+                      </tr>
+                      <!-- item 2 -->
+                      <tr>
+                        <td class="text-center">
+
+                          <div id="submit-button" class="submit-container">
+                            <div @click="clickedSubmit" ref="submit-btn" :class="buttonClass" class="submit-btn">
+                              <span v-show="!clicked">PROMOTE</span>
+                              <span v-show="loaded"><i class="fas fa-check fa-3x"></i></span>
+                            </div>
+                            <div v-if="loading" class="img-loader"></div>
+                          </div>
+
+                          <!--<div id="submit-button" class="submit-container">
+                            <div @click="clickedSubmit" ref="submit-btn" :class="buttonClass" class="submit-btn">
+                              <span v-show="!clicked">PROMOTE</span>
+                              <span v-show="loaded">✔</span>
+                            </div>
+                            <svg v-if="loading" class="loader-svg">
+                              <path stroke="#ff6666" fill="none" stroke-width="4" d="M25,2.5A22.5,22.5 0 1 1 2.5,25A22.5,22.5 0 0 1 25,2.5" stroke-dasharray="157" :stroke-dashoffset="loaderOffset"></path>
+                            </svg>
+                          </div> -->
+
+                        </td>
+                        <td>
+                          <a href="#" data-toggle="modal" data-target="#modal-product-detail02">
+                            <img src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" width="100px">
+                          </a>
+                        </td>
+                        <td>Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water </td>
+                        <td class="table-category text-center ">
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/facebook-icon.png" alt="Facebook" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox1" value="option1">
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/twitter-icon.png" alt="Twitter" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox2" value="option2">
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/pinterest-icon.png" alt="Pinterest" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox3" value="option3">
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/etsy-icon.png" alt="Etsy" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox4" value="option4">
+                            </div>
+                          </label>
+
+                          <label class="checkbox-inline icheckbox text-center mr-2">
+                            <div><img src="img/instagram-icon.png" alt="Instagram" width="25px"></div>
+                            <div>
+                              <input type="checkbox" id="inlineCheckbox5" value="option5">
+                            </div>
+                          </label>
+
+                        </td>
+                        <td>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Create new post
+                            </label>
+                          </div>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Share post
+                            </label>
+                          </div>
+                          <div>
+                            <label>
+                              <input type="checkbox" name="c1" id="c1" value=""> Like post
+                            </label>
+                          </div>
+                        </td>
+                        <td class="text-center font-weight-bold">100 pts</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span><i class="fas fa-angle-double-left"></i></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item mr-2">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span><i class="fas fa-angle-double-right"></i></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <select id="select21" class="form-control select2x page-link" style="width:100%">
+                          <option value="">25</option>
+                          <option value="">50</option>
+                          <option value="">100</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+    </aside>
+  </div>
+
+  <!-- Modal 1-->
+  <div id="modal-product-detail01" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg?version=1" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Puppy Invitations - Puppy Birthday Party Invitations - Puppy Themed Party Invitations - Dog Birthday - INSTANT DOWNLOAD - Edit NOW!!</h4>
+              <h5>Description</h5>
+              <p>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing... ♥NO WAITING!! Start RIGHT NOW and just type over the sample text! Edit yourself with the latest version of Adobe Reader. If you would prefer to have me edit the invitation for you, please contact me and I will set up a custom listing for you ($4 extra and 1 day turnaround time).
+                <br>
+                <br> ♥This listing is for a digital invitation that is customizable instantly by you! Invitations are 5x7 and the listing includes three files (all .PDF):
+                <br>
+                <br> 1- single invitation file (can be converted into a .JPG after editing) 2- two invitations formatted onto an 8.5x11 page 3- backside design (print on the back before trimming 8.5x11)
+                <br>
+                <br> ♥Easy to edit!! Just type over the sample text (PDF with the option to change PDF to JPEG, see below). For more details, WATCH MY NEW VIDEO here:
+                <br>
+                <br> ♥♥"Come. Sit. Stay." is NOT editable. All other text IS editable. Please read included instructions for details (use Ctrl + E to open text bar to change font size). Please do not hesitate to contact me for questions or help.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2-->
+  <div id="modal-product-detail02" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water</h4>
+              <h5>Description</h5>
+              <p>Halloween Party Invitations Template, plus matching Halloween supplies! No waiting! Edit NOW from home using Corjl.com. </p>
+              <p>♦Includes 10 different items: Halloween Invitation, Halloween Banner, Halloween Thank You Cards, Halloween Tent Cards, Halloween Favor Tags, Halloween Treat Bag Topper,s Halloween Cupcake Toppers, Halloween Cupcake Wrappers, Halloween Water Bottle Wrappers, Halloween Mini Candy Bar Wrappers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/users_custom.js"></script>
+
+  <!-- script for animated button -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js'></script>
+  <script>
+    const circumference = 157
+    new Vue({
+      el: '#submit-button',
+      data: {
+        clicked: false,
+        loading: false,
+        loaded: false,
+        loaderOffset: circumference
+      },
+      methods: {
+        clickedSubmit() {
+            // no actions until loading finishes
+            if (this.clicked && !this.loaded)
+              return
+
+            // restart when button finished the animation
+            if (this.loaded) {
+              this.restart()
+              return
+            }
+
+            // start loading animation 
+            this.clicked = true
+
+            // when css transition ends, execute animateLoader method
+            this.$refs['submit-btn'].addEventListener("transitionend",
+              this.animateLoader, false);
+          },
+          animateLoader() {
+            this.loading = true
+              // remove transition end event listener
+            this.$refs['submit-btn'].removeEventListener("transitionend",
+              this.animateLoader, false);
+
+            // animate the loaderOffset property,
+            // on production this should be replaced 
+            // with the real loading progress
+            TweenLite.to(this, 2, {
+              loaderOffset: 0,
+              ease: Power4.easeInOut,
+              onComplete: this.completeLoading // execute this method when animation ends
+            })
+          },
+          completeLoading() {
+            this.loading = false
+            this.loaded = true
+          },
+          restart() {
+            this.clicked = false
+            this.loaded = false
+            this.loaderOffset = circumference
+          }
+      },
+      computed: {
+        buttonClass() {
+          if (this.loaded) {
+            return 'loaded'
+          }
+
+          if (this.clicked) {
+            return 'round'
+          }
+
+          return ''
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>

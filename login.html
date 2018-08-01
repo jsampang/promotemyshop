@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Welcome to PromoteMyShop.com</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <style>
+ body.my-login-page{background: url(images/intro-bg.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; font-size: 14px;}.my-login-page .card-wrapper{width: 400px; margin: 0 auto; padding-top: 78px;}.my-login-page .card{border-color: transparent; box-shadow: 0 0 40px rgba(0, 0, 0, 0.85);}.my-login-page .card.fat{padding: 10px;}.my-login-page .card .card-title{margin-bottom: 30px;}.my-login-page .form-control{border-width: 2.3px;}.my-login-page .form-group label{width: 100%;}.my-login-page .btn.btn-block{padding: 12px 10px;}.my-login-page .margin-top20{margin-top: 20px;}.my-login-page .no-margin{margin: 0;}.my-login-page .footer{margin: 40px 0; color: #fbc8ff; text-align: center;}@media screen and (max-width: 425px){.my-login-page .card-wrapper{width: 90%; margin: 0 auto;}}@media screen and (max-width: 320px){.my-login-page .card.fat{padding: 0;}.my-login-page .card.fat .card-body{padding: 15px;}}
+  </style>
+
+
+</head>
+
+<body class="my-login-page">
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+          <div class="card fat">
+            <div class="card-body">
+              <div class="text-center mb-5"><a href="index.html"><img src="images/logo.png" width="300px" alt="PromoteMyShop.com"></a></div>
+              <h4 class="card-title text-center">Login</h4>
+              <form method="POST">
+                <div class="form-group">
+                  <label for="email">E-Mail Address</label>
+                  <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password
+                    <a href="forgot.html" class="float-right">
+											Forgot Password?
+										</a>
+                  </label>
+                  <input id="password" type="password" class="form-control" name="password" required data-eye>
+                </div>
+                <div class="form-group">
+                  <label>
+                    <input type="checkbox" name="remember"> Remember Me
+                  </label>
+                </div>
+                <div class="form-group no-margin">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Login
+                  </button>
+                </div>
+                <div class="margin-top20 text-center">
+                  Don't have an account? <a href="signup.html">Create One</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer">
+            Copyright &copy; 2018 PromoteMyShop.com
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  <script>
+    $(function () {
+      $("input[type='password'][data-eye]").each(function (i) {
+        var $this = $(this);
+
+        $this.wrap($("<div/>", {
+          style: 'position:relative'
+        }));
+        $this.css({
+          paddingRight: 60
+        });
+        $this.after($("<div/>", {
+          html: 'Show',
+          class: 'btn btn-primary btn-sm',
+          id: 'passeye-toggle-' + i,
+          style: 'position:absolute;right:10px;top:50%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);-o-transform:translate(0,-50%);padding: 2px 7px;font-size:12px;cursor:pointer;'
+        }));
+        $this.after($("<input/>", {
+          type: 'hidden',
+          id: 'passeye-' + i
+        }));
+        $this.on("keyup paste", function () {
+          $("#passeye-" + i).val($(this).val());
+        });
+        $("#passeye-toggle-" + i).on("click", function () {
+          if ($this.hasClass("show")) {
+            $this.attr('type', 'password');
+            $this.removeClass("show");
+            $(this).removeClass("btn-outline-primary");
+          } else {
+            $this.attr('type', 'text');
+            $this.val($("#passeye-" + i).val());
+            $this.addClass("show");
+            $(this).addClass("btn-outline-primary");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

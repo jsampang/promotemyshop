@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin </title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="../app/img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../app/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="../app/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/menubarfold.css">
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="../app/img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="../app/img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Welcome Admin <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="#"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar">
+          <div id="menu" class="menu_align" role="navigation">
+            <ul class="navigation mt-1">
+              <li>
+                <a href="index.html">
+                  <div class="text-nav-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  <div class="text-center text-nav-title">Dashboard</div>
+                </a>
+              </li>
+              <li>
+                <a href="promo.html">
+                  <div class="text-nav-icon"><i class="fas fa-tag"></i></div>
+                  <div class="text-center text-nav-title">Promo</div>
+                </a>
+              </li>
+              <li>
+                <a href="users.html">
+                  <div class="text-nav-icon"><i class="fas fa-users"></i></div>
+                  <div class="text-center text-nav-title">Users</div>
+                </a>
+              </li>
+              <li>
+                <a href="payments.html">
+                  <div class="text-nav-icon"><i class="far fa-money-bill-alt"></i></div>
+                  <div class="text-center text-nav-title">Payments</div>
+                </a>
+              </li>
+              <li>
+                <a href="stats.html">
+                  <div class="text-nav-icon"><i class="fas fa-chart-bar"></i></div>
+                  <div class="text-center text-nav-title">Stats</div>
+                </a>
+              </li>
+              <li>
+                <a href="referrals.html">
+                  <div class="text-nav-icon"><i class="fas fa-user-plus"></i></div>
+                  <div class="text-center text-nav-title">Referrals</div>
+                </a>
+              </li>          
+            </ul>
+          </div>  
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Promo</h1>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="header-object">
+                  <div class="d-flex justify-content-end">
+                    <div class="option-search d-none d-sm-block mt-2 mr-2">
+                      <span class="search-wrapper">
+                        <input type="text" placeholder="Search here"><i class="fas fa-search text-secondary"></i>
+                      </span>
+                    </div>
+                    <div class="option-search d-none d-sm-block mt-2 mr-2">
+                      <span class="search-wrapper">
+                        <select>
+                              <option value="">All Promo</option>
+                              <option value="">Active Promo</option>
+                              <option value="">Inactive Promo</option>
+                            </select>
+                      </span>
+                    </div>
+                    <button type="button" class="btn btn-icon btn-default m-r-50 mr-1" data-toggle="modal" data-target="#modal-edit-promo">
+                      <i class="icon fas fa-pencil-alt text-secondary" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-default m-r-50 mr-1" data-toggle="modal" data-target="#modal-add-promo">
+                      <i class="icon fas fa-plus text-secondary" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-default m-r-50 mr-1" data-toggle="modal" data-target="#modal-confirm-delete">
+                      <i class="icon fas fa-trash-alt text-secondary" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-curved table-striped">
+                    <thead>
+                      <tr>
+                        <th class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </th>
+                        <th>Code <i class="fas fa-sort"></i></th>
+                        <th>Offer <i class="fas fa-sort"></i></th>
+                        <th>Qty <i class="fas fa-sort"></i></th>
+                        <th>Used <i class="fas fa-sort"></i></th>
+                        <th>Eligible <i class="fas fa-sort"></i></th>
+                        <th>Stat <i class="fas fa-sort"></i></th>
+                        <th>Expires <i class="fas fa-sort"></i></th>
+                        <th>Offer Duration <i class="fas fa-sort"></i></th>
+                        <th>Single Use <i class="fas fa-sort"></i></th>
+                        <th class="text-center">Status <i class="fas fa-sort"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody class="promote-list">
+                      <!-- Item 1 -->
+                      <tr>
+                        <td class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </td>
+                        <td>MS_START_2</td>
+                        <td>$6.99 Monthly Fee</td>
+                        <td>12</td>
+                        <td>0</td>
+                        <td>All</td>
+                        <td>06/20/2018</td>
+                        <td>06/20/2018</td>
+                        <td>1 Year</td>
+                        <td>Yes</td>
+                        <td class="text-center"><span class="badge badge-pill badge-info float-none">Active</span></td>
+                      </tr>
+                      <!-- Item 2 -->
+                      <tr>
+                        <td class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </td>
+                        <td>START_GROW</td>
+                        <td>$19.99 Monthly Fee</td>
+                        <td>16</td>
+                        <td>5</td>
+                        <td>All</td>
+                        <td>06/12/2018</td>
+                        <td>06/04/2018</td>
+                        <td>1 Year</td>
+                        <td>Yes</td>
+                        <td class="text-center"><span class="badge badge-pill badge-danger float-none">Expired</span></td>
+                      </tr>
+                      <!-- Item 3 -->
+                      <tr>
+                        <td class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </td>
+                        <td>MTX20-IJ</td>
+                        <td>$12.99 Monthly Fee</td>
+                        <td>12</td>
+                        <td>0</td>
+                        <td>All</td>
+                        <td>06/20/2018</td>
+                        <td>06/20/2018</td>
+                        <td>1 Year</td>
+                        <td>Yes</td>
+                        <td class="text-center"><span class="badge badge-pill badge-info float-none">Active</span></td>
+                      </tr>
+                      <!-- Item 4 -->
+                      <tr>
+                        <td class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </td>
+                        <td>TARASMITH00</td>
+                        <td>$29.99 Monthly Fee</td>
+                        <td>12</td>
+                        <td>0</td>
+                        <td>All</td>
+                        <td>06/20/2018</td>
+                        <td>06/20/2018</td>
+                        <td>1 Year</td>
+                        <td>Yes</td>
+                        <td class="text-center"><span class="badge badge-pill badge-info float-none">Active</span></td>
+                      </tr>
+                      <!-- Item 5 -->
+                      <tr>
+                        <td class="text-center">
+                          <label class="custom-check">
+                            <input type="checkbox" />
+                            <span></span>
+                          </label>
+                        </td>
+                        <td>GROW1</td>
+                        <td>$9.99 Monthly Fee</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>All</td>
+                        <td>06/20/2018</td>
+                        <td>06/20/2018</td>
+                        <td>1 Year</td>
+                        <td>Yes</td>
+                        <td class="text-center"><span class="badge badge-pill badge-danger float-none">Expired</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nav aria-label="Page navigation example" class="mt-4">
+                    <span class="ml-2"><b>40 Total Records</b></span>
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span><i class="fas fa-angle-double-left"></i></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item mr-2">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span><i class="fas fa-angle-double-right"></i></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <select id="select21" class="form-control select2x page-link" style="width:100%">
+                          <option value="">25</option>
+                          <option value="">50</option>
+                          <option value="">100</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Modal Edit Promo Code-->
+  <div id="modal-edit-promo" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Edit Promo Code</h4>
+        </div>
+        <div class="modal-body">
+          <div class="box-border">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Code
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="" placeholder="MS_START_2">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Offer
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Subtract</option>
+                              <option value="">Monthly Fee</option>
+                              <option value="">Per Order Fee</option>
+                              <option value="">Add Trail Days</option>
+                            </select>
+                        </div>          
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                          <input type="text" id="" placeholder="7.15" class="form-control">
+                        </div>          
+                      </div>
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label"> 
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">
+                                Please select
+                              </option>
+                              <option value="">Monthly Fee</option>
+                              <option value="">Per Order Fee</option>
+                              <option value="">Add Trail Days</option>
+                            </select>
+                        </div>          
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                          <input type="text" id="" placeholder="" class="form-control">
+                        </div>          
+                      </div>
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Quantity
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <div class="input-group">
+                          <input type="text" id="" placeholder="0" class="form-control">
+                        </div>           
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <label for="" class="form-control-label">
+                              Offer Duration
+                            </label>
+                           </div>
+                          <div class="col-sm-8">
+                            <div class="input-group">
+                              <select class="form-control">
+                                <option value="">One Time</option>
+                                <option value="">1 Day</option>
+                                <option value="">2 Day</option>
+                                <option value="">3 Day</option>
+                              </select>
+                            </div>             
+                          </div>
+                        </div>         
+                      </div>
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Code
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <select class="form-control">
+                        <option value="">All</option>
+                        <option value="">New Register</option>
+                        <option value="">Single Sellers</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Starts
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                          <input type="date" id="" placeholder="0" class="form-control">
+                        </div>           
+                      </div>
+                      <div class="col-sm-2 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Expires
+                    </label>
+                  </div>
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                          <input type="date" id="" placeholder="0" class="form-control">
+                        </div>           
+                      </div>
+                      
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Single Use Only
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Yes</option>
+                              <option value="">No</option>
+                            </select>
+                        </div>             
+                      </div>
+                      <div class="col-sm-2 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Status
+                    </label>
+                  </div>
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Active</option>
+                              <option value="">Inactive</option>
+                            </select>
+                        </div>           
+                      </div> 
+                    </div>           
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Add New Promo Code-->
+  <div id="modal-add-promo" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Add Promo Code</h4>
+        </div>
+        <div class="modal-body">
+          <div class="box-border">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Code
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Offer
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Choose</option>
+                              <option value="">Monthly Fee</option>
+                              <option value="">Per Order Fee</option>
+                              <option value="">Add Trail Days</option>
+                            </select>
+                        </div>          
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                          <input type="text" id="" placeholder="" class="form-control">
+                        </div>          
+                      </div>
+                    </div>           
+                  </div>
+                </div>        
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Quantity
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <div class="input-group">
+                          <input type="text" id="" placeholder="" class="form-control">
+                        </div>           
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <label for="" class="form-control-label">
+                              Offer Duration
+                            </label>
+                           </div>
+                          <div class="col-sm-8">
+                            <div class="input-group">
+                              <select class="form-control">
+                                <option value="">One Time</option>
+                                <option value="">1 Day</option>
+                                <option value="">2 Day</option>
+                                <option value="">3 Day</option>
+                              </select>
+                            </div>             
+                          </div>
+                        </div>         
+                      </div>
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Code
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <select class="form-control">
+                        <option value="">All</option>
+                        <option value="">New Register</option>
+                        <option value="">Single Sellers</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Starts
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                          <input type="date" id="" placeholder="0" class="form-control">
+                        </div>           
+                      </div>
+                      <div class="col-sm-2 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Expires
+                    </label>
+                  </div>
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                          <input type="date" id="" placeholder="0" class="form-control">
+                        </div>           
+                      </div>
+                      
+                    </div>           
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Single Use Only
+                    </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Yes</option>
+                              <option value="">No</option>
+                            </select>
+                        </div>             
+                      </div>
+                      <div class="col-sm-2 text-right txt_media">
+                    <label for="" class="form-control-label">
+                      Status
+                    </label>
+                  </div>
+                      <div class="col-sm-5">
+                        <div class="input-group">
+                            <select class="form-control">
+                              <option value="">Active</option>
+                              <option value="">Inactive</option>
+                            </select>
+                        </div>           
+                      </div> 
+                    </div>           
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-primary">Save &amp; New</button>
+          <button type="button" class="btn btn-primary">Save &amp; Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Delete Confirm-->
+  <div id="modal-confirm-delete" class="modal fade animated" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Delete Confirm</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delet this?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../app/js/app.js"></script>
+  <script type="text/javascript" src="js/menubarfold.js"></script>
+
+</body>
+
+</html>

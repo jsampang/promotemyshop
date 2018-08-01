@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin </title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="../app/img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../app/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="../app/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/menubarfold.css">
+  
+  <!-- google stats example-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    // Load Charts and the corechart and barchart packages.
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+
+    // Draw the pie chart and bar chart when Charts is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+      var piechart_options = {
+        title: 'Pie Chart: How Much Pizza I Ate Last Night',
+        width: 400,
+        height: 300
+      };
+      var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+      piechart.draw(data, piechart_options);
+
+      var barchart_options = {
+        title: 'Barchart: How Much Pizza I Ate Last Night',
+        width: 400,
+        height: 300,
+        legend: 'none'
+      };
+      var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+      barchart.draw(data, barchart_options);
+    }
+  </script>
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="../app/img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="../app/img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <!--<li class="mt-3">
+            <span class="coins">        
+                <img src="../app/img/rewards.png" alt="rewards" data-alt="../app/img/rewards.gif">       
+              </span>
+            <span class="text-white">10,000 pts</span>
+          </li>-->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Admin <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="#"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar">
+          <div id="menu" class="menu_align" role="navigation">
+            <ul class="navigation mt-1">
+              <li>
+                <a href="index.html">
+                  <div class="text-nav-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  <div class="text-center text-nav-title">Dashboard</div>
+                </a>
+              </li>
+              <li>
+                <a href="promo.html">
+                  <div class="text-nav-icon"><i class="fas fa-tag"></i></div>
+                  <div class="text-center text-nav-title">Promo</div>
+                </a>
+              </li>
+              <li>
+                <a href="users.html">
+                  <div class="text-nav-icon"><i class="fas fa-users"></i></div>
+                  <div class="text-center text-nav-title">Users</div>
+                </a>
+              </li>
+              <li>
+                <a href="payments.html">
+                  <div class="text-nav-icon"><i class="far fa-money-bill-alt"></i></div>
+                  <div class="text-center text-nav-title">Payments</div>
+                </a>
+              </li>
+              <li>
+                <a href="stats.html">
+                  <div class="text-nav-icon"><i class="fas fa-chart-bar"></i></div>
+                  <div class="text-center text-nav-title">Stats</div>
+                </a>
+              </li>
+              <li>
+                <a href="referrals.html">
+                  <div class="text-nav-icon"><i class="fas fa-user-plus"></i></div>
+                  <div class="text-center text-nav-title">Referrals</div>
+                </a>
+              </li>          
+            </ul>
+          </div>  
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Dashboard</h1>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Dashboard -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <h3 class="card-title">Overview</h3>
+                <span class="float-right">
+                  <i class="fa fa-fw ti-angle-up clickable"></i>
+                  <i class="fa fa-fw ti-close removecard "></i>
+                </span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="widget-bg-color-icon card-box border_primary">
+                      <div class="bg-icon bg-primary pull-left">
+                        <i class="fas fa-tag text-white"></i>
+                      </div>
+                      <div class="text-right">
+                        <h3 class="text-primary"><b id="widget_count1">6</b></h3>
+                        <p>Promo</p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="widget-bg-color-icon card-box border_success">
+                      <div class="bg-icon bg-success pull-left">
+                        <i class="far fa-money-bill-alt text-white"></i>
+                      </div>
+                      <div class="text-right">
+                        <h3 class="text-success"><b id="widget_count3">60</b></h3>
+                        <p>Payments</p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="widget-bg-color-icon card-box border_etsy">
+                      <div class="bg-icon bg-etsy pull-left">
+                        <i class="fas fa-user-plus text-white"></i>
+                      </div>
+                      <div class="text-right">
+                        <h3 class="text-etsy"><b id="widget_count3">10</b></h3>
+                        <p>Referrals</p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="widget-bg-color-icon card-box border_secondary">
+                      <div class="bg-icon bg-secondary pull-left">
+                        <i class="fas fa-users text-white"></i>
+                      </div>
+                      <div class="text-right">
+                        <h3 class="text-secondary"><b id="widget_count3">100</b></h3>
+                        <p>Users</p>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Statistics -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <h3 class="card-title">Statistics</h3>
+                <span class="float-right">
+                  <i class="fa fa-fw ti-angle-up clickable"></i>
+                  <i class="fa fa-fw ti-close removecard "></i>
+                </span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6"><div id="piechart_div" style="border: 1px solid #ccc"></div></div>
+                  <div class="col-md-6"><div id="barchart_div" style="border: 1px solid #ccc"></div></div>     
+                </div>
+              </div>
+            </div>
+            <!-- Activity -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <h3 class="card-title">Recent Activities</h3>
+                <span class="float-right">
+                  <i class="fa fa-fw ti-angle-up clickable"></i>
+                  <i class="fa fa-fw ti-close removecard "></i>
+                </span>
+              </div>
+              <div class="card-body">
+                <ul class="schedule-cont">
+                  <li class="item success">
+                    <div class="data">
+                      <div class="time text-muted"> Just now</div>
+                      <p>
+                        Product <a href="">#7625</a> shared on Facebook, Twitter, Pinterest, Etsy &amp; Instagram. You earned <span class="text-primary">3000</span> reward points, spent <span class="text-danger">100</span> points
+                      </p>
+                    </div>
+                  </li>
+                  <li class="item danger">
+                    <div class="data">
+                      <div class="time text-muted"> 7min ago</div>
+                      <p>
+                        Product <a href="">#9856</a> shared on Facebook, Twitter, Pinterest, Etsy &amp; Instagram. You earned <span class="text-primary">6000</span> reward points, spent <span class="text-danger">300</span> points
+                      </p>
+                    </div>
+                  </li>
+                  <li class="item default">
+                    <div class="data">
+                      <div class="time text-muted">5hours ago</div>
+                      <p>
+                        Product <a href="">#1156</a> shared on Facebook, Twitter, Pinterest, Etsy &amp; Instagram. You earned <span class="text-primary">1000</span> reward points, spent <span class="text-danger">100</span> points
+                      </p>
+                    </div>
+                  </li>
+                  <li class="item success">
+                    <div class="data">
+                      <div class="time text-muted"> Yesterday</div>
+                      <p>
+                        Product <a href="">#7786</a> shared on Facebook, Twitter, Pinterest, Etsy &amp; Instagram. You earned <span class="text-primary">7000</span> reward points, spent <span class="text-danger">500</span> points
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>           
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <script type="text/javascript" src="../app/js/app.js"></script>
+  <script type="text/javascript" src="js/menubarfold.js"></script>
+
+</body>
+
+</html>

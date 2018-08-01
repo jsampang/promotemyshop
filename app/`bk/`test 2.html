@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript - Trigger GIF play (button)</title>
+  
+
+
+  
+  
+</head>
+
+<body>
+
+  <div class="container">
+  
+
+  <div class="row">
+    <div class="col-lg-12">
+        <button class="btn btn-success btn-md" id="gif-trigger">Restart GIF</button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+      <img src="img/rewards.gif" alt="" />
+    </div>
+  </div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+  
+
+    <script >
+  
+  $('document').ready(function(){
+  $gif = $('img').first();
+  
+  $('#gif-trigger').on('click', function(){
+    src = $gif.attr('src');
+    
+    $gif.attr('src', src);
+  });
+});
+  
+  
+  </script>
+
+
+
+
+</body>
+
+</html>

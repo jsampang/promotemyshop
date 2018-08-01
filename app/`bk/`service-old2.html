@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <style>
+    #webmenu {
+      width: 340px;
+    }
+  </style>
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fas fa-bell fa-fw black"></i>
+              <span class="badge badge-pill badge-success">2</span>
+            </a>
+            <ul class="dropdown-menu dropdown-messages table-striped">
+              <li class="dropdown-title">New Notification</li>
+              <li>
+                <a href="" class="message striped-col dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/5b40a4/1554110487/il_570xN.1554110487_kv2y.jpg?version=0" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Flamingo Birthday Party</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="message dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/d516d5/1506647640/il_570xN.1506647640_o7w6.jpg?version=0" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Luau Invitations Template</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="message striped-col dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/753bdb/1201307475/il_570xN.1201307475_56l6.jpg?version=1" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Movie Ticket Party Invitations</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="dropdown-footer"><a href="#"> View All Promotions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <img src="img/avatar.jpg" width="35" class="rounded-circle img-fluid float-left" height="35" alt="User Image">
+              <div class="riot">
+                <div>
+                  User
+                  <span><i class="fa fa-sort-down"></i></span>
+                </div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="img/avatar.jpg" class="rounded-circle" alt="User Image">
+                <p> Hannah Montoya</p>
+              </li>
+              <!-- Menu Body -->
+              <li class="p-t-3">
+                <a href="user_profile.html" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> My Profile </a>
+              </li>
+              <li role="presentation"></li>
+              <li><a href="edit_user.html" class="dropdown-item"><i class="fas fa-cog fa-fw"></i> Account Settings </a></li>
+              <li role="presentation" class="dropdown-divider"></li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="float-left">
+                  <a href="lockscreen.html">
+                    <i class="fas fa-lock fa-fw"></i> Lock
+                  </a>
+                </div>
+                <div class="float-right">
+                  <a href="login.html">
+                    <i class="fas fa-sign-out-alt fa-fw"></i> Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+            <div class="nav_profile">
+              <div class="media profile-left">
+                <a class="pull-left profile-thumb" href="#">
+                  <img src="img/avatar.jpg" class="rounded-circle" alt="User Image">
+                </a>
+                <div class="content-profile">
+                  <h4 class="media-heading">
+                                    User Admin
+                                </h4>
+                  <ul class="icon-list">
+                    <li>
+                      <a href="users.html" title="user">
+                        <i class="fas fa-user fa-fw "></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lockscreen.html" title="lock">
+                        <i class="fas fa-lock fa-fw"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="edit_user.html" title="settings">
+                        <i class="fas fa-cog fa-fw"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="login.html" title="Login">
+                        <i class="fas fa-sign-out-alt fa-fw"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <ul class="navigation">
+              <li class="active">
+                <a href="my-products.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-promotions.html">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="mm-text ">My Promotions</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-coins"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>
+              <li>
+                <a href="my-settings.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">My Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Promote My List</h1>
+        <ol class="breadcrumb">
+          <li><a href="my-products.html"><i class="fas fa-boxes fa-fw"></i> My Products</a>
+          </li>
+          <li><a href="product-detail.html">Product Detail</a>
+          </li>
+          <li class="active">Service
+          </li>
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Choose Service</h4>
+              </div>
+              <div class="card-body">
+                <ol class="cd-multi-steps text-bottom count">
+                  <li class="current"><em>Service</em></li>
+                  <li><em>Method</em></li>
+                  <li><em>Configure</em></li>
+                  <li><em>Final</em></li>
+                </ol>
+                <div class="row">
+                  <div class="col-md-12 ">
+                    <div class="mt-2 mb-5 text-center ">
+                      <h4>How do you want to promote?</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    </div>
+
+                    <div class="text-center">
+                      <div class="btn-group social-media-method">
+                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="img/social-media-icon.png" width="50px"> <span>Select Social Media</span>
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu2">
+                          <li>
+                            <a href="method-facebook.html" title=""> <img src="img/facebook-icon.png" width="50px"><span>Facebook</span></a>
+                          </li>
+                          <li>
+                            <a href="method-twitter-post.html" title=""> <img src="img/twitter-icon.png" width="50px"><span>Twitter</span></a>
+                          </li>
+                          <li>
+                            <a href="method-pinterest.html" title=""> <img src="img/pinterest-icon.png" width="50px"><span>Pinterest</span></a>
+                          </li>
+                          <li>
+                            <a href="method-etsy.html" title=""> <img src="img/etsy-icon.png" width="50px"><span>Etsy</span></a>
+                          </li>
+                          <li>
+                            <a href="method-instagram.html" title=""> <img src="img/instagram-icon.png" width="50px"><span>Instagram</span></a>
+                          </li>
+                        </ul>
+                      </div>
+
+
+                      <select name="webmenu" id="webmenu">
+                        <option value="01" selected="selected" title="http://via.placeholder.com/50x50">aa</option>
+                        <option value="02" title="http://via.placeholder.com/50x50">bb</option>
+                        <option value="03" title="http://via.placeholder.com/50x50">cc</option>
+                        <option value="04" title="http://via.placeholder.com/50x50">dd</option>
+                        <option value="05" title="http://via.placeholder.com/50x50">dd</option>
+                        <option value="06" title="http://via.placeholder.com/50x50">ff</option>
+                      </select>
+
+
+                      <select name="webmenu" id="webmenu">
+                        <option value="calendar" data-image="http://via.placeholder.com/50x50">Calendar</option>
+                        <option value="shopping_cart" data-image="http://via.placeholder.com/50x50">Shopping Cart</option>
+                        <option value="cd" data-image="http://via.placeholder.com/50x50">CD</option>
+                        <option value="email" selected="selected" title="http://via.placeholder.com/50x50">Email</option>
+                        <option value="faq" data-image="http://via.placeholder.com/50x50">FAQ</option>
+                        <option value="games" data-image="http://via.placeholder.com/50x50">Games</option>
+                      </select>
+
+                    </div>
+                    <div class="mt-5 text-center">
+                      <a href="product-detail.html" class="ladda-button btn btn-default btn-lg button_normal"><i class="fas fa-arrow-left"></i> Back</a>
+                      <!-- <a href="#" class="ladda-button btn btn-danger btn-lg button_normal"> Next <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/users_customx.js"></script>
+
+  <script type="text/javascript" src="http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/js/msdropdown/jquery.dd.min.js"></script>
+
+  <script>
+    $("body select").msDropDown();
+  </script>
+
+
+  <script language="javascript">
+    $(document).ready(function (e) {
+      try {
+        $("body select").msDropDown();
+      } catch (e) {
+        alert(e.message);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

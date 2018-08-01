@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="mt-3">
+            <span class="coins">        
+                <img src="img/rewards.png" alt="rewards" data-alt="img/rewards.gif">       
+              </span>
+            <span class="text-white">10,000 pts</span>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Welcome User <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="https://promotemyshop.com/admin/my-settings" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+
+            <ul class="navigation mt-3">
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span class="mm-text ">My Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-products.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="earn-credits.html">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <span class="mm-text ">Earn Credits</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-promotions.html">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="mm-text ">My Promotions</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-coins"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>
+              <li>
+                <a href="my-settings.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">My Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>My Promotions</h1>
+        <ol class="breadcrumb">
+          <li class="active"><i class="fas fa-bullhorn fa-fw"></i> My Promotions
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">My Product Promotions</h4>
+                <div class="mt-2">You can view, edit, or cancel any open promotion by using the icons below.</div>
+              </div>
+              <div class="card-body">
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs" style="margin-bottom: -1px">
+                    <li class="nav-item">
+                      <a href="#open-order" data-toggle="tab" class="nav-link active font-weight-bold">Open Order <small>(2)</small></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#completed" data-toggle="tab" class="nav-link font-weight-bold">Completed <small>(3)</small></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#cancel" data-toggle="tab" class="nav-link font-weight-bold">Cancel <small>(1)</small></a>
+                    </li>
+                    <li class="pull-right">
+                      <div class="header-object">
+                        <div class="d-flex justify-content-end">
+                          <span class="option-search d-none d-sm-block mr-2">
+                              <span class="search-wrapper">
+                                <input type="text" placeholder="Search here"><i class="fas fa-search"></i>
+                              </span>
+                          </span>
+                            <div class="option-search d-none d-sm-block">
+                              <span class="search-wrapper">
+                                <select>
+                                  <option value="">Filter</option>
+                                  <option value="">Date Added</option>
+                                  <option value="">Date Published</option>
+                                </select>
+                              </span>
+                            </div>
+                          <!--<div class="btn-group drop_btn" role="group">
+                            <button type="button" class="btn btn-default bg-light dropdown-toggle m-r-50 btn-curved" id="exampleIconDropdown1" data-toggle="dropdown" aria-expanded="false">
+                              <i class="fas fa-filter text-secondary"></i> Filter
+                              <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-custom">
+                              <a class="dropdown-item" href="#">Date Added</a>
+                              <a class="dropdown-item" href="#">Date Published</a>
+                            </div>
+                          </div>-->
+                        </div>
+                      </div>
+                      <!--<div class="header-object">
+                        <div class="d-flex justify-content-end">
+                          <span class="option-search d-none d-sm-block mr-2">
+                              <span class="search-wrapper">
+                                <input type="text" placeholder="Search here"><i class="fas fa-search"></i>
+                              </span>
+                          </span>
+                          <div class="btn-group drop_btn" role="group">
+                            <button type="button" class="btn btn-default bg-light dropdown-toggle m-r-50 btn-curved" id="exampleIconDropdown1" data-toggle="dropdown" aria-expanded="false">
+                              <i class="fas fa-filter text-secondary"></i> Filter
+                              <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-custom">
+                              <a class="dropdown-item" href="#">Date Added</a>
+                              <a class="dropdown-item" href="#">Date Published</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+                    </li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content tab-curved">
+                    
+                    <!-- tab 1 Open Order -->
+                    <div class="tab-pane active" id="open-order">
+                      <div class="table-responsive">
+                        <table class="table table-curved table-striped">
+                          <thead>
+                            <tr class="filters">
+                              <th class="text-center">Item</th>
+                              <th class="text-center">Source</th>
+                              <th class="text-center">Method</th>
+                              <th class="text-center">Audience</th>
+                              <th class="text-center">Cost</th>
+                              <th class="text-center">Date Added</th>
+                              <th class="text-center">Date Published</th>
+                              <th class="text-center">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody class="promote-list">
+                            <!-- item 1 -->
+                            <tr>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail01">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/7628726/r/il/cbd494/1457019178/il_570xN.1457019178_j0oe.jpg" alt="" width="50px">
+                                </a>
+                              </td>
+                              <td class="text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">New Post</td>
+                              <td class="text-center">500 - 1000</td>
+                              <td class="text-center">1,500 pts</td>
+                              <td class="text-center">07/10/2018</td>
+                              <td class="text-center">07/12/2018</td>
+                              <td class="text-center">                
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail01" >
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="View"><i class="far fa-eye mr-2" ></i></span>
+                                </a>  
+                                <a href="#" data-toggle="modal" data-target="#modal-promote-facebook">
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Edit"><i class="far fa-edit mr-2"></i></span>
+                                </a>
+                                
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-confirm" data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Tooltip in top">
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Delete"><i class="far fa-trash-alt mr-2" ></i></span>
+                                </a>
+                       
+                                <!--<div class="dropdown">
+                                  <button class="btn btn-default bg-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-edit text-secondary"></i>
+                                  </button>
+                                  <div class="dropdown-menu dropdown-custom">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-promote-facebook"><i class="far fa-edit"></i> Edit</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-delete-confirm"><i class="far fa-trash-alt"></i> Delete</a>
+                                  </div>
+                                </div>-->
+                              </td>
+                            </tr>
+                            <!-- item 2 -->
+                            <tr>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail02">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/1ec810/1576762115/il_570xN.1576762115_64d9.jpg" alt="" width="50px">
+                                </a>
+                              </td>
+                              <td class="text-center"><img src="img/twitter-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">New Tweet</td>
+                              <td class="text-center">500 - 1000</td>
+                              <td class="text-center">1,500 pts</td>
+                              <td class="text-center">07/10/2018</td>
+                              <td class="text-center">07/12/2018</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail02" >
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="View"><i class="far fa-eye mr-2" ></i></span>
+                                </a>
+                                <a href="#" data-toggle="modal" data-target="#modal-promote-twitter">
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Edit"><i class="far fa-edit mr-2"></i></span>
+                                </a>    
+                                <a href="#" data-toggle="modal" data-target="#modal-delete-confirm" data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Tooltip in top">
+                                  <span data-toggle="tooltip" data-tooltip="tooltip" data-placement="top" data-original-title="Delete"><i class="far fa-trash-alt mr-2" ></i></span>
+                                </a>
+                                <!--<div class="dropdown">
+                                  <button class="btn btn-default bg-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-edit text-secondary"></i>
+                                  </button>
+                                  <div class="dropdown-menu dropdown-custom">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-promote-twitter"><i class="far fa-edit"></i> Edit</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-delete-confirm"><i class="far fa-trash-alt"></i> Delete</a>
+                                  </div>
+                                </div>-->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example" class="mt-4">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span><i class="fas fa-angle-double-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mr-2">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <select id="select21" class="form-control select2x page-link" style="width:100%">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                              </select>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                    
+                    <!-- tab 2 Completed -->
+                    <div class="tab-pane fade" id="completed">
+                      <div class="table-responsive">
+                        <table class="table table-curved table-striped">
+                          <thead>
+                            <tr class="filters">
+                              <th class="text-center">Item</th>
+                              <th class="text-center">Source</th>
+                              <th class="text-center">Method</th>
+                              <th class="text-center">Audience</th>
+                              <th class="text-center">Cost</th>
+                              <th class="text-center">Date Added</th>
+                              <th class="text-center">Date Published</th>
+                              <th class="text-center">View</th>
+                            </tr>
+                          </thead>
+                          <tbody class="promote-list">
+                            <!-- item 1 -->
+                            <tr>
+                              <td class="text-center">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/70cdb8/1403553258/il_570xN.1403553258_k0cu.jpg" alt="" width="50px">
+                              </td>
+                              <td class="text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">New Post</td>
+                              <td class="text-center">500 - 1000</td>
+                              <td class="text-center">1,500 pts</td>
+                              <td class="text-center">07/10/2018</td>
+                              <td class="text-center">07/12/2018</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail03">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- item 2 -->
+                            <tr>
+                              <td class="text-center">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/7628726/r/il/b2ba28/1474870198/il_570xN.1474870198_e6ew.jpg" alt="" width="50px">
+                              </td>
+                              <td class="text-center"><img src="img/twitter-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">New Tweet</td>
+                              <td class="text-center">500 - 1000</td>
+                              <td class="text-center">1,500 pts</td>
+                              <td class="text-center">07/10/2018</td>
+                              <td class="text-center">07/12/2018</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail04">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- item 3 -->
+                            <tr>
+                              <td class="text-center">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/8a908b/1602041607/il_570xN.1602041607_55hf.jpg?version=0" alt="" width="50px">
+                              </td>
+                              <td class="text-center"><img src="img/pinterest-icon.png" width="25px" alt="Pinterest"></td>
+                              <td class="text-center">Pinned</td>
+                              <td class="text-center">200 - 500</td>
+                              <td class="text-center">500 pts</td>
+                              <td class="text-center">07/3/2018</td>
+                              <td class="text-center">07/30/2018</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail05">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example" class="mt-4">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span><i class="fas fa-angle-double-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mr-2">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <select id="select21" class="form-control select2x page-link" style="width:100%">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                              </select>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                    
+                    <!-- tab 3 Cancel -->
+                    <div class="tab-pane fade" id="cancel">
+                      <div class="table-responsive">
+                        <table class="table table-curved table-striped">
+                          <thead>
+                            <tr class="filters">
+                              <th class="text-center">Item</th>
+                              <th class="text-center">Source</th>
+                              <th class="text-center">Method</th>
+                              <th class="text-center">Audience</th>
+                              <th class="text-center">Cost</th>
+                              <th class="text-center">Date Added</th>
+                              <th class="text-center">Date Published</th>
+                              <th class="text-center">View</th>
+                            </tr>
+                          </thead>
+                          <tbody class="promote-list">
+                            <!-- item 1 -->
+                            <tr>
+                              <td class="text-center">           
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/7628726/r/il/b87437/841669098/il_570xN.841669098_c4of.jpg" alt="" width="50px">     
+                              </td>
+                              <td class="text-center"><img src="img/instagram-icon.png" width="25px" alt="Instagram"></td>
+                              <td class="text-center">New Post</td>
+                              <td class="text-center">500 - 1000</td>
+                              <td class="text-center">1,500 pts</td>
+                              <td class="text-center">07/10/2018</td>
+                              <td class="text-center">07/12/2018</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail06">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>     
+                          </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example" class="mt-4">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span><i class="fas fa-angle-double-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mr-2">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <select id="select21" class="form-control select2x page-link" style="width:100%">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                              </select>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+    </aside>
+  </div>
+
+  <!-- Modal Product Detail 1 Open Order -->
+  <div id="modal-product-detail01" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/cbd494/1457019178/il_570xN.1457019178_j0oe.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Luau Invitation - Luau Party Invitation - Beach Wedding - Hawaiian Wedding - Wedding Beach - Wedding Luau - Beach Party - Luau Ticket Invite</h4>
+              <h5>Description</h5>
+              <p>Luau Invitation Template! No waiting! Edit NOW from home using Templett.com. ✿Try out the Luau invitation DEMO now! Copy and paste the URL below to demo: https://templett.com/design/demo/ArcticParty/249577,27095. Edit your invitation with Templett.com right after purchasing! ✿No software download needed!! ✿Easy to use ✿Edit ALL text ✿Add as much text as you need and move text anywhere on your invitation ✿Text color and size can be changed ✿Move objects around ✿Save as a high quality JPG or PDF file</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Product Detail 2 Open Order -->
+  <div id="modal-product-detail02" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/1ec810/1576762115/il_570xN.1576762115_64d9.jpg?version=0" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Train Birthday Invitation - Transporation Party - Car Party - Train Birthday - Transporation Birthday - INSTANT Access! Edit NOW!</h4>
+              <h5>Description</h5>
+              <p>Transportation Invitations Template! No waiting! Edit NOW from home using Corjl.com. ♥Try out the Transportation Party Invitation DEMO now! Copy and paste the URL below to demo: https://www.corjl.com/orders/demo/AKF2HM ♥Edit your invitations with Corjl.com right after purchasing. ♥No software download needed!! ♥Easy to use ♥Works with mobile devices! ♥Edit ALL text ♥Add as much text as you need and move text anywhere on your invitation ♥Text color and size can be changed ♥Move some graphics around ♥Add images!! ♥Save as a high quality JPG or PDF file</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Product Detail 3 Completed -->
+  <div id="modal-product-detail03" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/70cdb8/1403553258/il_570xN.1403553258_k0cu.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Beach Party Invitations , Beach Theme Party - Beach Birthday Party Invitations - Beach Birthday Invitations - INSTANT ACCESS - Edit NOW!</h4>
+              <h5>Description</h5>
+              <p>Beach Party Invitations Template! Backside Included. No waiting! Edit NOW from home using Templett.com. ►Try out the Beach Party Invitation DEMO now! Copy and paste the URL below to demo: http://www.corjl.com/orders/demo/11602/LP12KH</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Product Detail 4 Completed -->
+  <div id="modal-product-detail04" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/b2ba28/1474870198/il_570xN.1474870198_e6ew.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Construction Invitation - Construction Birthday Party Invitation - Construction Party Invitation - Construction Invite - Edit NOW Instantly!</h4>
+              <h5>Description</h5>
+              <p>Construction Invitation Template! Backside design included. No waiting! Edit NOW from home using Corjl.com. ►Try out the Construction Party invitation DEMO now! Copy and paste the URL below to demo: http://www.corjl.com/orders/demo/11602/LP12KH</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Product Detail 5 Completed -->
+  <div id="modal-product-detail05" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/8a908b/1602041607/il_570xN.1602041607_55hf.jpg?version=0" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Halloween Invitations, Halloween Ticket Invitations, Halloween Tickets, Halloween Party Invitations - Ticket Halloween Party -INSTANT ACCESS</h4>
+              <h5>Description</h5>
+              <p>Halloween Invitations Ticket Template! No waiting! Edit NOW from home using Corjl.com. Try out this Halloween Invitation DEMO now! Copy and paste the URL below to demo: https://www.corjl.com/orders/demo/1OE13</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Product Detail 6 Cancel -->
+  <div id="modal-product-detail06" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/b87437/841669098/il_570xN.841669098_c4of.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Halloween Printables - You've Been Booed - Easy to Print and Share! INSTANT DOWNLOAD! Halloween Ideas</h4>
+              <h5>Description</h5>
+              <p>Halloween Printables! "Boo" your friends and neighbors using this poem and door sign. No cutting necessary and the design is in black and white so that your neighbors can copy and re-use them. Here's how it works: 1. Print 2 poems and 2 door signs and prepare 2 plates of goodies for your neighbors 2. Leave your treats (including poems and door signs) at 2 neighbors homes (in a place they will see). 3. The poem instructs your neighbors to hang the "We've been Booed" sign on their door and repeat the process to 2 new people. It's fun to see all the signs in your neighborhood! WHAT'S INCLUDED IN THE PURCHASE: •Digital Download (PDFs) - "We've been Booed" &amp; "You've been Booed" signs (each fitted onto an 8.5x11) Here's the poem included in the sign: This Halloween there’s something new, A sweet surprise that’s called a “Boo!” Secret friends have left it here, To bring your family some ghostly cheer! You’ve been “BOO’ED”now it’s your turn to share, With friends or neighbors, anyone you dare! Put together two scary treats, spooky and fun Then leave them at their doors and run! Enclose this poem and one thing more, A “WE’VE BEEN BOOED” sign for their front door!</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Delete Confirm-->
+  <div id="modal-delete-confirm" class="modal fade animated" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Delete Confirm</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delet this?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Facebook -->
+  <div id="modal-promote-facebook" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote</h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar facebook-bar"><i class="fab fa-facebook fa-2x"></i> Facebook</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/cbd494/1457019178/il_570xN.1457019178_j0oe.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Luau Invitation - Luau Party Invitation - Beach Wedding - Hawaiian Wedding - Wedding Beach - Wedding Luau - Beach Party - Luau Ticket Invite</h4>
+              <p>Luau Invitation Template! No waiting! Edit NOW from home using Templett.com.</p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-dismiss="modal"> Cancel</a>
+            <a href="#" class="ladda-button btn btn-facebook btn-lg button_normal text-white"> Post to Facebook <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Edit Twitter -->
+  <div id="modal-promote-twitter" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote</h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar twitter-bar"><i class="fab fa-twitter fa-2x"></i> Twitter</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/1ec810/1576762115/il_570xN.1576762115_64d9.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <p>Train Birthday Invitation - Transporation Party - Car Party - Train Birthday - Transporation Birthday - INSTANT Access! Edit NOW!
+              </p>
+              <p>#etsyproducts</p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-dismiss="modal"> Cancel</a>
+            <a href="#" class="ladda-button btn btn-twitter btn-lg button_normal text-white"> Tweet <i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/users_custom.js"></script>
+
+</body>
+
+</html>

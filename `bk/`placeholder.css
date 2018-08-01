@@ -1,0 +1,99 @@
+.box-single img {
+  width: 300px;
+  margin-bottom: 9px;
+}
+
+.intro .megaland-nav ul li:last-child a {
+  background-color: #86c724;
+  padding: 14px 30px 14px 30px;
+  margin-left: 11px;
+  display: block;
+  color: #fff!important;
+}
+
+.intro-hosting nav.hosting-nav ul.nav li:last-child a:hover {
+  color: #fff;
+  border-bottom: 0px solid #86c724;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.tex-white {
+  color: #fff
+}
+
+.bottom-footer a {
+  color: #fff
+}
+
+.bottom-footer a:hover {
+  color: #ddd
+}
+
+.hosting-plan .price-plans .plan-single {
+  background-color: #F0E6DD;
+  border: 1px solid #8a3682;
+}
+
+.carousel-inner>.item>a>img,
+.carousel-inner>.item>img,
+.img-responsive,
+.thumbnail a>img,
+.thumbnail>img {
+  margin: 0 auto;
+}
+
+.hosting-wcu .wcu-wrapper .wcu-box img {
+  width: 233px;
+  height: 88px;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+.modal-open .modal {
+  margin-top: 101px;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 900px!important;
+  }
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #532254;
+  color: #fff;
+}
+
+.modal-header .close {
+  color: #fff;
+}
+
+.footer span {
+  font-size: 12px;
+  font-weight: 200;
+  color: #a0a0a0;
+  letter-spacing: 1px;
+}
+
+.sub-heading {
+  font-size: 20px;
+  color: #532254;
+  margin: 30px 0px 60px 0px;
+  font-weight: 600;
+}

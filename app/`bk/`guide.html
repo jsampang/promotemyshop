@@ -1,0 +1,111 @@
+onclick="document.location='method-facebook-post.html'" style="cursor:pointer"
+
+<i class="fab fa-facebook-square fa-2x"></i>
+<i class="fab fa-twitter-square fa-2x"></i>
+<i class="fab fa-pinterest-square fa-2x"></i>
+<i class="fab fa-etsy fa-2x"></i>
+<i class="fab fa-instagram fa-2x"></i>
+
+<link rel="stylesheet" type="text/css" href="<% url('/asset/css/admin/dataTables.bootstrap4.css') %>">
+
+<script type="text/javascript" src="<% url('/asset/js/admin/jquery.dataTables.js') %>"></script>
+<script type="text/javascript" src="<% url('/asset/js/admin/dataTables.bootstrap4.js') %>"></script>
+
+
+<script>
+  $(window).load(function () {
+    page = window.location.pathname.split("/").pop();
+    menuChildren = $('a[href="' + page + '"]');
+    $(menuChildren).parent('li').addClass('active');
+  });
+</script>
+
+
+<div class="col-md-4 mb-5">
+  <div class=" slider-content m-b-20">
+    <div class="cover-wrapper">
+      <div id="slider-clear" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators m-b-0">
+          <li data-target="#slider-clear" data-slide-to="0" class=""></li>
+          <li data-target="#slider-clear" data-slide-to="1" class=""></li>
+          <li data-target="#slider-clear" data-slide-to="2" class="active"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img alt="Clear-img" src="<% url('/asset/images/admin/slide01.png') %>" class="img-fluid d-block">
+          </div>
+          <div class="carousel-item">
+            <img alt="Clear-img" src="<% url('/asset/images/admin/slide02.png') %>" class="img-fluid d-block">
+          </div>
+          <div class="carousel-item">
+            <img alt="Clear-img" src="<% url('/asset/images/admin/slide03.png') %>" class="img-fluid d-block">
+          </div>
+          <div class="carousel-item">
+            <img alt="Clear-img" src="<% url('/asset/images/admin/slide04.png') %>" class="img-fluid d-block">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+@font-face {
+    font-family: 'themify';
+    src: url('https://jsampang.github.io/promotemyshop/admin/fonts/themify.eot');
+    src: url('https://jsampang.github.io/promotemyshop/admin/fonts/themify.eot?#iefix') format('embedded-opentype'), url('https://jsampang.github.io/promotemyshop/admin/fonts/themify.woff') format('woff'), url('https://jsampang.github.io/promotemyshop/admin/fonts/themify.ttf') format('truetype'), url('https://jsampang.github.io/promotemyshop/admin/fonts/themify.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+
+
+<aside class="left-side sidebar-offcanvas">
+  <section class="sidebar affix">
+    <div class="left_slim">
+      <div id="menu" class="menu_align" role="navigation">
+        <ul class="navigation mt-3">
+          <li>
+            <a href="index.html">
+              <i class="fas fa-tachometer-alt" data-toggle="tooltip" data-placement="right" title="Home"></i>
+              <span class="mm-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="promo.html">
+              <i class="fas fa-tag" data-toggle="tooltip" data-placement="right" title="Promo"></i>
+              <span class="mm-text ">Promo</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html">
+              <i class="fas fa-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+              <span class="mm-text ">Users</span>
+            </a>
+          </li>
+          <li>
+            <a href="payments.html">
+              <i class="far fa-money-bill-alt" data-toggle="tooltip" data-placement="right" title="Payments"></i>
+              <span class="mm-text ">Payments</span>
+            </a>
+          </li>
+          <li>
+            <a href="stats.html">
+              <i class="fas fa-chart-bar" data-toggle="tooltip" data-placement="right" title="Stats"></i>
+              <span class="mm-text ">Stats </span>
+            </a>
+          </li>
+          <li>
+            <a href="referrals.html">
+              <i class="fas fa-user-plus" data-toggle="tooltip" data-placement="right" title="Referrals"></i>
+              <span class="mm-text ">Referrals </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</aside>

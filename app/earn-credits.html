@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="mt-3">
+            <span class="coins">        
+                <img src="img/rewards.png" alt="rewards" data-alt="img/rewards.gif">       
+              </span>
+            <span class="text-white">10,000 pts</span>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Welcome User <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="https://promotemyshop.com/admin/my-settings" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+
+            <ul class="navigation mt-3">
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span class="mm-text ">My Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-products.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="earn-credits.html">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <span class="mm-text ">Earn Credits</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-promotions.html">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="mm-text ">My Promotions</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-coins"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>
+              <li>
+                <a href="my-settings.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">My Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Earn Credits</h1>
+        <ol class="breadcrumb">
+          <li class="active"><i class="fas fa-hand-holding-heart fa-fw"></i> Earn credits by promoting
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Products to promote</h4>
+                <div class="mt-2">Choose from the list below for items to promote.</div>
+              </div>
+              <div class="card-body">
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs" style="margin-bottom: -1px">
+                    <li class="nav-item">
+                      <a href="#to-promote" data-toggle="tab" class="nav-link active font-weight-bold">To Promote <small>(2)</small></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#promoted" data-toggle="tab" class="nav-link font-weight-bold">Promoted <small>(2)</small></a>
+                    </li>
+                    <li class="pull-right">
+                      <div class="header-object">
+                        <div class="d-flex justify-content-end">
+                          <span class="option-search d-none d-sm-block mr-2">
+                              <span class="search-wrapper">
+                                <input type="text" placeholder="Search here"><i class="fas fa-search"></i>
+                              </span>
+                          </span>
+                            <div class="option-search d-none d-sm-block">
+                              <span class="search-wrapper">
+                                <select>
+                                  <option value="">Filter</option>
+                                  <option value="">Date Added</option>
+                                  <option value="">Date Published</option>
+                                </select>
+                              </span>
+                            </div>
+                          <!--<div class="btn-group drop_btn" role="group">
+                            <button type="button" class="btn btn-default bg-light dropdown-toggle m-r-50 btn-curved" id="exampleIconDropdown1" data-toggle="dropdown" aria-expanded="false">
+                              <i class="fas fa-filter text-secondary"></i> Filter
+                              <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-custom">
+                              <a class="dropdown-item" href="#">Date Added</a>
+                              <a class="dropdown-item" href="#">Date Published</a>
+                            </div>
+                          </div>-->
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content tab-curved">
+                    <!-- tab 1 to promote -->
+                    <div class="tab-pane active" id="to-promote">
+                      <div class="table-responsive">
+                        <table class="table table-curved table-striped">
+                          <thead>
+                            <tr class="filters">
+                              <th width="7%">&nbsp;</th>
+                              <th width="53%" class="text-center">Item</th>
+                              <th width="10%" class="text-center">Source</th>
+                              <th width="15%" class="text-center">Method</th>
+                              <th width="10%" class="text-center">Payment</th>
+                              <th width="5%" class="text-center">View</th>
+                            </tr>
+                          </thead>
+                          <tbody class="promote-list">
+                            <!-- Item 1 -->
+                            <tr>
+                              <td class="text-center">
+                                <label class="custom-check">
+                                  <input type="checkbox" />
+                                  <span></span>
+                                </label>
+                              </td>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Puppy Invitations - Puppy Birthday Party Invitations - Puppy Themed Party Invitations - Dog Birthday - INSTANT DOWNLOAD - Edit NOW!!</p>
+                                  </div>
+                                </div>
+
+                              </td>
+                              <td class="table-category text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">Facebook Likes</td>
+                              <td class="text-center font-weight-bold">300 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail01">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- Item 2 -->
+                            <tr>
+                              <td class="text-center">
+                                <label class="custom-check">
+                                  <input type="checkbox" />
+                                  <span></span>
+                                </label>
+                              </td>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="table-category text-center"><img src="img/twitter-icon.png" width="25px" alt="Twitter"></td>
+                              <td class="text-center">Twitter Post</td>
+                              <td class="text-center font-weight-bold">100 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail02">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- Item 3 -->
+                            <tr>
+                              <td class="text-center">
+                                <label class="custom-check">
+                                  <input type="checkbox" />
+                                  <span></span>
+                                </label>
+                              </td>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/1dad21/1525514436/il_570xN.1525514436_3iu7.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Superhero Invitation with FREE Thank you card / Superhero Avenger Birthday Invitation / Avenger Invitation / Boy Invitation /</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="table-category text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">Facebook Share</td>
+                              <td class="text-center font-weight-bold">200 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail05">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- Item 4 -->
+                            <tr>
+                              <td class="text-center">
+                                <label class="custom-check">
+                                  <input type="checkbox" />
+                                  <span></span>
+                                </label>
+                              </td>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/17973062/r/il/505a3f/1586411235/il_570xN.1586411235_r6pg.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Deadpool invitation card - Handmade item Instant Digital Download: 1 JPG included Made to order</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="table-category text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">Facebook Post</td>
+                              <td class="text-center font-weight-bold">400 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail06">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- Item 5 -->
+                            <tr>
+                              <td class="text-center">
+                                <label class="custom-check">
+                                  <input type="checkbox" />
+                                  <span></span>
+                                </label>
+                              </td>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/17973062/r/il/88baae/1558800086/il_570xN.1558800086_2hap.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Minecraft invitation card - 1) Purchase listing. Click on Add to Cart and make payment 2) When checking out, please include the following information in the notes to seller box:</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="table-category text-center"><img src="img/instagram-icon.png" width="25px" alt="Instagram"></td>
+                              <td class="text-center">Instagram Post</td>
+                              <td class="text-center font-weight-bold">100 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail07">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                          <a href="#" class="ladda-button btn btn-default btn-lg button_normal mr-4">Ignore</a>
+                          <a href="#" data-toggle="modal" data-target="#modal-promote-facebook" class="ladda-button btn btn-danger btn-lg button_normal"> Promote </a>
+                        </div>
+                        <nav aria-label="Page navigation example" class="mt-4">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span><i class="fas fa-angle-double-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mr-2">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <select id="select21" class="form-control select2x page-link" style="width:100%">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                              </select>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                    <!-- tab 2 promoted -->
+                    <div class="tab-pane fade" id="promoted">
+                      <div class="table-responsive">
+                        <table class="table table-curved table-striped" id="tablexx">
+                          <thead>
+                            <tr class="filters">
+                              <th width="50%" class="text-center">Item</th>
+                              <th width="10%" class="text-center">Source</th>
+                              <th width="15%" class="text-center">Method</th>
+                              <th width="10%" class="text-center">Payment</th>
+                              <th width="5%" class="text-center">View</th>
+                            </tr>
+                          </thead>
+                          <tbody class="promote-list">
+                            <!-- item 1 -->
+                            <tr>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://i.etsystatic.com/7628726/r/il/763ac0/1547281806/il_570xN.1547281806_tcq0.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Superhero Invitations - Girls Superhero Birthday Invitations - Super Hero Thank You Cards - Superhero Supplies - INSTANT ACCESS - Edit NOW!</p>
+                                  </div>
+                                </div>
+
+                              </td>
+                              <td class="table-category text-center"><img src="img/facebook-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">Facebook Likes</td>
+                              <td class="text-center font-weight-bold">300 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail03">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            <!-- item 2 -->
+                            <tr>
+                              <td>
+                                <div class="media">
+                                  <img class="align-self-start mr-3 mt-3" src="https://img.etsystatic.com/il/18456f/1543457202/il_570xN.1543457202_szgm.jpg" alt="" width="75px">
+                                  <div class="media-body">
+                                    <p class="mt-3">Police Party Invitations - Police Birthday Invitations - Police Party Supplies - Police Thank You Cards - INSTANT ACCESS - Edit NOW!</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="table-category text-center"><img src="img/twitter-icon.png" width="25px" alt="Facebook"></td>
+                              <td class="text-center">Twitter Post</td>
+                              <td class="text-center font-weight-bold">100 pts</td>
+                              <td class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#modal-product-detail04">
+                                  <i class="far fa-eye fa-custom"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example" class="mt-4">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span><i class="fas fa-angle-double-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mr-2">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span><i class="fas fa-angle-double-right"></i></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <select id="select21" class="form-control select2x page-link" style="width:100%">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                              </select>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </aside>
+  </div>
+
+  <!-- Modal Promote Facebook -->
+  <div id="modal-promote-facebook" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote <span class="modal-sub-title">1 of 5</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar facebook-bar"><i class="fab fa-facebook fa-2x"></i> Facebook</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg?version=1" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Puppy Invitations - Puppy Birthday Party Invitations - Etsy</h4>
+              <p>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing. Edit yourself with the latest version of Adobe Reader
+              </p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-dismiss="modal"> Close</a>
+            <a href="#" class="ladda-button btn btn-facebook btn-lg button_normal text-white" data-target="#modal-promote-twitter" data-toggle="modal" data-dismiss="modal"> Post to Facebook <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Promote Twitter -->
+  <div id="modal-promote-twitter" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote <span class="modal-sub-title">2 of 5</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar twitter-bar"><i class="fab fa-twitter fa-2x"></i> Twitter</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <p>Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water
+              </p>
+              <p>#etsyproducts</p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-target="#modal-promote-facebook" data-toggle="modal" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="#" class="ladda-button btn btn-twitter btn-lg button_normal text-white" data-target="#modal-promote-pinterest" data-toggle="modal" data-dismiss="modal"> Tweet <i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Promote Pinterest -->
+  <div id="modal-promote-pinterest" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote <span class="modal-sub-title">3 of 5</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar pinterest-bar"><i class="fab fa-pinterest fa-2x"></i> Pinterest</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Puppy Invitations - Puppy Birthday Party Invitations - Etsy</h4>
+              <p>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing. Edit yourself with the latest version of Adobe Reader
+              </p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-target="#modal-promote-twitter" data-toggle="modal" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="#" class="ladda-button btn btn-pinterest btn-lg button_normal text-white" data-target="#modal-promote-etsy" data-toggle="modal" data-dismiss="modal"> Pin it <i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Promote Etsy -->
+  <div id="modal-promote-etsy" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote <span class="modal-sub-title">4 of 5</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar etsy-bar"><i class="fab fa-pinterest fa-2x"></i> Etsy</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Puppy Invitations - Puppy Birthday Party Invitations - Etsy</h4>
+              <p>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing. Edit yourself with the latest version of Adobe Reader
+              </p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-target="#modal-promote-pinterest" data-toggle="modal" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="#" class="ladda-button btn btn-etsy btn-lg button_normal text-white" data-target="#modal-promote-instagram" data-toggle="modal" data-dismiss="modal"> Post to Esty <i class="fab fa-etsy"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Promote Instagram -->
+  <div id="modal-promote-instagram" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(220, 220, 220);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Promote <span class="modal-sub-title">5 of 5</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="social-media-bar instagram-bar"><i class="fab fa-pinterest fa-2x"></i> Instagram</div>
+          <div class="row social-media-post">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <p>Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water
+              </p>
+              <div class="mt-4">
+                <textarea rows="4" class="form-control resize_vertical" placeholder="Say something about"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="mt-4">
+            <a href="#" class="ladda-button btn btn-default btn-lg button_normal" data-target="#modal-promote-etsy" data-toggle="modal" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="#" class="ladda-button btn btn-instagram btn-lg button_normal text-white" data-target="#modal-promote-instagram" data-toggle="modal" data-dismiss="modal"> Post to Instagram <i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal product 1-->
+  <div id="modal-product-detail01" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg?version=1" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Puppy Invitations - Puppy Birthday Party Invitations - Puppy Themed Party Invitations - Dog Birthday - INSTANT DOWNLOAD - Edit NOW!!</h4>
+              <h5>Description</h5>
+              <p>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing... ♥NO WAITING!! Start RIGHT NOW and just type over the sample text! Edit yourself with the latest version of Adobe Reader. If you would prefer to have me edit the invitation for you, please contact me and I will set up a custom listing for you ($4 extra and 1 day turnaround time).
+                <br>
+                <br> ♥This listing is for a digital invitation that is customizable instantly by you! Invitations are 5x7 and the listing includes three files (all .PDF):
+                <br>
+                <br> 1- single invitation file (can be converted into a .JPG after editing) 2- two invitations formatted onto an 8.5x11 page 3- backside design (print on the back before trimming 8.5x11)
+                <br>
+                <br> ♥Easy to edit!! Just type over the sample text (PDF with the option to change PDF to JPEG, see below). For more details, WATCH MY NEW VIDEO here:
+                <br>
+                <br> ♥♥"Come. Sit. Stay." is NOT editable. All other text IS editable. Please read included instructions for details (use Ctrl + E to open text bar to change font size). Please do not hesitate to contact me for questions or help.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal product 2-->
+  <div id="modal-product-detail02" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/4ea3f0/1261500742/il_570xN.1261500742_8lsh.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Halloween Invitations - Halloween Party Decorations - Halloween Party Favors - Halloween Labels - Halloween Party Supplies - Halloween Water</h4>
+              <h5>Description</h5>
+              <p>Halloween Party Invitations Template, plus matching Halloween supplies! No waiting! Edit NOW from home using Corjl.com. </p>
+              <p>♦Includes 10 different items: Halloween Invitation, Halloween Banner, Halloween Thank You Cards, Halloween Tent Cards, Halloween Favor Tags, Halloween Treat Bag Topper,s Halloween Cupcake Toppers, Halloween Cupcake Wrappers, Halloween Water Bottle Wrappers, Halloween Mini Candy Bar Wrappers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal product 3-->
+  <div id="modal-product-detail03" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/7628726/r/il/763ac0/1547281806/il_570xN.1547281806_tcq0.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Superhero Invitations - Girls Superhero Birthday Invitations - Super Hero Thank You Cards - Superhero Supplies - INSTANT ACCESS - Edit NOW!</h4>
+              <h5>Description</h5>
+              <p>Superhero Invitations template, plus matching party supplies! No waiting! Edit NOW from home using Corjl.com. </p>
+              <p>♦Includes 7 different items: Invitations (backside included) Favor Tags Thank You Cards Water Bottle Labels Cupcake Toppers Tent Cards Banner </p>
+              <p> ♦Try out the Pink Superhero Pack DEMO now! Copy and paste the URL below to demo... http://www.corjl.com/orders/demo/4E56O4 Please read through the entire listing before purchasing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal product 4-->
+  <div id="modal-product-detail04" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/18456f/1543457202/il_570xN.1543457202_szgm.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Police Party Invitations - Police Birthday Invitations - Police Party Supplies - Police Thank You Cards - INSTANT ACCESS - Edit NOW!</h4>
+              <h5>Description</h5>
+              <p>Police Party Invitations template, plus matching party supplies! No waiting! Edit NOW from home using Corjl.com. </p>
+
+              <p>♦Includes 7 different items: Invitations (backside included) Favor Tags Thank You Cards Water Bottle Labels Cupcake Toppers Cupcake Wrappers Tent Cards Banner </p>
+
+              <p>♦Try out the Police Party Pack DEMO now! Copy and paste the URL below to demo... http://www.corjl.com/orders/demo/11732/ Please read through the entire listing before purchasing...</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal product 5-->
+  <div id="modal-product-detail05" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://img.etsystatic.com/il/1dad21/1525514436/il_570xN.1525514436_3iu7.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Superhero Invitation with FREE Thank you card / Superhero Avenger Birthday Invitation / Avenger Invitation / Boy Invitation </h4>
+              <h5>Description</h5>
+              <p>Your custom invite will be delivered within 12hrs or less! PLEASE READ FULL DESCRIPTION BEFORE ORDERING! :) THANK YOU! :) How to order: STEP 1: Add this listing to your cart. STEP 2: In the "Notes to Seller" box please copy the following and fill out your information: *Name of birthday boy/girl: *Age child will celebrate: *Date of party: *Time of party: *Location/address of party: *RSVP: *Preffered Invite size (4x6 or 5x7) What you will get: - STANDARD DELIVERY TIME IS WITHIN 12HRS or LESS! - 4 x 6 or 5 x 7 @ 300DPI High resolution Digital File - A4 size layout with 2 invites in it. - File format will be in JPEG, please send a message if you want a PDF instead. - We offer unlimited revisions until you are satisfied with your order</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal product 6-->
+  <div id="modal-product-detail06" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/17973062/r/il/505a3f/1586411235/il_570xN.1586411235_r6pg.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Deadpool invitation card </h4>
+              <h5>Description</h5>
+              <p>Purchase listing. Click on Add to Cart and make payment 2) When checking out, please include the following information in the notes to seller box: •Invitation style: for boy, for girl, for twins. •Name • Age • Date • Time • Location of party • RSVP information • Size of invitation option is 4X6 or 5X7 ((if you don't specify, the 5x7 will be emailed))</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal product 7-->
+  <div id="modal-product-detail07" class="modal fade animated" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-white">Product Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://i.etsystatic.com/17973062/r/il/88baae/1558800086/il_570xN.1558800086_2hap.jpg" width="300px">
+              <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+            </div>
+            <div class="col-md-7">
+              <h4>Minecraft invitation card</h4>
+              <h5>Description</h5>
+              <p>1) Purchase listing. Click on Add to Cart and make payment 2) When checking out, please include the following information in the notes to seller box: •Invitation style: for boy, for girl, for twins. •Name • Age • Date • Time • Location of party • RSVP information • Size of invitation option is 4X6 or 5X7 ((if you don't specify, the 5x7 will be emailed))</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/users_custom.js"></script>
+
+</body>
+
+</html>

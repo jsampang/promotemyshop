@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css"  />
+  <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="skin-default">
+  <div class="preloader">
+    <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fas fa-bell fa-fw black"></i>
+              <span class="badge badge-pill badge-success">2</span>
+            </a>
+            <ul class="dropdown-menu dropdown-messages table-striped">
+              <li class="dropdown-title">New Notification</li>
+              <li>
+                <a href="" class="message striped-col dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/5b40a4/1554110487/il_570xN.1554110487_kv2y.jpg?version=0" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Flamingo Birthday Party</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="message dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/d516d5/1506647640/il_570xN.1506647640_o7w6.jpg?version=0" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Luau Invitations Template</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="message striped-col dropdown-item">
+                  <img class="message-image rounded-circle" src="https://img.etsystatic.com/il/753bdb/1201307475/il_570xN.1201307475_56l6.jpg?version=1" alt="avatar-image">
+                  <div class="message-body">
+                    <strong>Movie Ticket Party Invitations</strong>
+                    <br> <i class="fab fa-facebook">
+                    </i> <i class="fab fa-etsy"></i>
+                    <i class="fab fa-pinterest-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <br>
+                    <small>Etsy ID# 234</small>
+                    <span class="badge badge-success label-mini msg-lable">200 shared</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="dropdown-footer"><a href="#"> View All Promotions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <img src="img/avatar.jpg" width="35" class="rounded-circle img-fluid float-left" height="35" alt="User Image">
+              <div class="riot">
+                <div>
+                  User
+                  <span><i class="fa fa-sort-down"></i></span>
+                </div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="img/avatar.jpg" class="rounded-circle" alt="User Image">
+                <p> Hannah Montoya</p>
+              </li>
+              <!-- Menu Body -->
+              <li class="p-t-3">
+                <a href="user_profile.html" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> My Profile </a>
+              </li>
+              <li role="presentation"></li>
+              <li><a href="edit_user.html" class="dropdown-item"><i class="fas fa-cog fa-fw"></i> Account Settings </a></li>
+              <li role="presentation" class="dropdown-divider"></li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="float-left">
+                  <a href="lockscreen.html">
+                    <i class="fas fa-lock fa-fw"></i> Lock
+                  </a>
+                </div>
+                <div class="float-right">
+                  <a href="login.html">
+                    <i class="fas fa-sign-out-alt fa-fw"></i> Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+            <div class="nav_profile">
+              <div class="media profile-left">
+                <a class="pull-left profile-thumb" href="#">
+                  <img src="img/avatar.jpg" class="rounded-circle" alt="User Image">
+                </a>
+                <div class="content-profile">
+                  <h4 class="media-heading">User Admin</h4>
+                  <ul class="icon-list">
+                    <li>
+                      <a href="users.html" title="user">
+                        <i class="fas fa-user fa-fw "></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lockscreen.html" title="lock">
+                        <i class="fas fa-lock fa-fw"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="edit_user.html" title="settings">
+                        <i class="fas fa-cog fa-fw"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="login.html" title="Login">
+                        <i class="fas fa-sign-out-alt fa-fw"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <ul class="navigation">
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-listing.html">
+                  <i class="fab fa-etsy"></i>
+                  <span class="mm-text ">My Listing</span>
+                </a>
+              </li>             
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-coins"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>        
+              <li>
+                <a href="index2.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">User Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Promote My List</h1>
+        <ol class="breadcrumb">
+          <li class="active"><a href="index.html"><i class="fas fa-list-alt fa-fw"></i> My Products</a>
+          </li>
+          
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"><i class="fas fa-boxes"></i> Select Item</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover" id="table">
+                    <thead>
+                      <tr class="filters">
+                        <th width="10%" class="text-center">Photo</th>
+                        <th width="50%">Description</th>
+                        <th width="10%" class="text-center">Etsy ID</th>
+                        <th width="30%">Category</th>
+                      </tr>
+                    </thead>
+                    <tbody class="promote-list">
+                      <tr onclick="document.location='confirm.html'" style="cursor:pointer">
+                        <td class="text-center"><img src="https://img.etsystatic.com/il/45ea2d/1215877529/il_570xN.1215877529_n087.jpg?version=1" width="100px"></td>
+                        <td><h6>Puppy Invitations </h6>Puppy Invitations Template! Backside design included! EDIT at home Now and save $$!! Please read through the entire description before purchasing...<br><br>
+Start RIGHT NOW and just type over the sample text! Edit yourself with the latest version of Adobe Reader. </td>
+                        <td class="text-center">A1234 </td>
+                        <td class="table-category">
+                          <span class="badge badge-pill badge-secondary">Invitation</span> 
+                          <span class="badge badge-pill badge-secondary">Birthday</span> 
+                          <span class="badge badge-pill badge-secondary">Dog</span>
+                          <span class="badge badge-pill badge-secondary">Puppy</span>
+                          <span class="badge badge-pill badge-secondary">Puppy Themed</span>
+                        </td>                      
+                      </tr>
+                      <tr>
+                        <td class="text-center"><img src="https://img.etsystatic.com/il/d516d5/1506647640/il_570xN.1506647640_o7w6.jpg?version=0" width="100px"></td>
+                        <td><h6>Luau Invitations Template</h6>Luau Invitations Template! Backside Included. No waiting! Edit NOW from home using Corjl.com. Want matching printables? Check out our other listing here:</td>
+                        <td class="text-center">B5678 </td>
+                        <td class="table-category">
+                          <span class="badge badge-pill badge-secondary">Invitation</span> 
+                          <span class="badge badge-pill badge-secondary">Cowboy</span> 
+                          <span class="badge badge-pill badge-secondary">Western</span>
+                          <span class="badge badge-pill badge-secondary">Wood Background</span>
+                        </td>                      
+                      </tr>
+                      <tr>
+                        <td class="text-center"><img src="https://img.etsystatic.com/il/5b40a4/1554110487/il_570xN.1554110487_kv2y.jpg?version=0" width="100px"></td>
+                        <td><h6>Flamingo Birthday Party</h6>Flamingo Birthday Party Invitation Template! Backside design included. No waiting! Edit NOW from home at Corjl.com.</td>
+                        <td class="text-center">C9123 </td>
+                        <td class="table-category">
+                          <span class="badge badge-pill badge-secondary">Invitation</span> 
+                          <span class="badge badge-pill badge-secondary">Cowboy</span> 
+                          <span class="badge badge-pill badge-secondary">Western</span>
+                          <span class="badge badge-pill badge-secondary">Wood Background</span>
+                        </td>                      
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <!-- modal-dialog -->
+            <!-- <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="Heading" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title custom_align" id="Heading">Delete User</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="alert alert-warning">
+                      <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span> Are you sure you want to delete this Account?
+                    </div>
+                  </div>
+                  <div class="modal-footer ">
+                    <a href="deleted_users.html" class="btn btn-danger">
+                      <span><i class="fa fa-check-circle" aria-hidden="true"></i></span> Yes
+                    </a>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                      <span><i class="fa fa-times" aria-hidden="true"></i></span> No
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+          </div>
+          
+        </div>
+
+      </section>
+    </aside>
+  </div>
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="js/dataTables.bootstrap4.js"></script>
+  <script type="text/javascript" src="js/users_custom.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Submit button</title>
+  <meta charset="UTF-8">
+  <title>PromoteMyShop | Admin Dashboard</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+  <style>
+    .wrap {
+      position: relative;
+      margin: auto;
+      margin-top: 5%;
+      width: 191px;
+      text-align: center;
+    }
+    
+    .wrap button {
+      display: block;
+      height: 60px;
+      padding: 0;
+      width: 191px;
+      background: none;
+      margin: auto;
+      border: 2px solid #1ECD97;
+      font-size: 18px;
+      font-family: "Lato";
+      color: #1ECD97;
+      cursor: pointer;
+      outline: none;
+      text-align: center;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -moz-border-radius: 30px;
+      -webkit-border-radius: 30px;
+      border-radius: 30px;
+      -moz-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+      -o-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+      -webkit-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+      transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+    }
+    
+    .wrap button:hover {
+      background: #1ECD97;
+      color: white;
+    }
+    
+    .wrap img {
+      position: absolute;
+      top: 11px;
+      display: none;
+      left: 71.5px;
+      -moz-transform: scale(0.6, 0.6);
+      -ms-transform: scale(0.6, 0.6);
+      -webkit-transform: scale(0.6, 0.6);
+      transform: scale(0.6, 0.6);
+    }
+    
+    .wrap svg {
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      /* @include rotate(270deg); */
+      position: absolute;
+      top: -2px;
+      left: 62px;
+      display: none;
+    }
+    
+    .wrap svg .circle_2 {
+      stroke-dasharray: 0 200;
+    }
+    
+    .wrap svg .fill_circle {
+      -moz-animation: fill-stroke 2s 0.4s linear forwards;
+      -webkit-animation: fill-stroke 2s 0.4s linear forwards;
+      animation: fill-stroke 2s 0.4s linear forwards;
+    }
+    
+    .wrap .circle {
+      width: 60px;
+      border: 3px solid #c3c3c3;
+      /* border: none; */
+    }
+    
+    .wrap .circle:hover {
+      background: none;
+    }
+    
+    .wrap .filled {
+      background: #1ECD97;
+      color: white;
+      line-height: 60px;
+      font-size: 160%;
+    }
+    
+    @-moz-keyframes fill-stroke {
+      0% {
+        stroke-dasharray: 0 200;
+      }
+      20% {
+        stroke-dasharray: 20 200;
+      }
+      40% {
+        stroke-dasharray: 30 200;
+      }
+      50% {
+        stroke-dasharray: 90 200;
+      }
+      70% {
+        stroke-dasharray: 120 200;
+      }
+      90% {
+        stroke-dasharray: 140 200;
+      }
+      100% {
+        stroke-dasharray: 182 200;
+      }
+    }
+    
+    @-webkit-keyframes fill-stroke {
+      0% {
+        stroke-dasharray: 0 200;
+      }
+      20% {
+        stroke-dasharray: 20 200;
+      }
+      40% {
+        stroke-dasharray: 30 200;
+      }
+      50% {
+        stroke-dasharray: 90 200;
+      }
+      70% {
+        stroke-dasharray: 120 200;
+      }
+      90% {
+        stroke-dasharray: 140 200;
+      }
+      100% {
+        stroke-dasharray: 182 200;
+      }
+    }
+    
+    @keyframes fill-stroke {
+      0% {
+        stroke-dasharray: 0 200;
+      }
+      20% {
+        stroke-dasharray: 20 200;
+      }
+      40% {
+        stroke-dasharray: 30 200;
+      }
+      50% {
+        stroke-dasharray: 90 200;
+      }
+      70% {
+        stroke-dasharray: 120 200;
+      }
+      90% {
+        stroke-dasharray: 140 200;
+      }
+      100% {
+        stroke-dasharray: 182 200;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body class="skin-default">
+
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo-white.png" alt="logo" width="170px" />
+      </a>
+      <div class="mr-auto">
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button"> <i class="fas fa-fw fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="dropdown messages-menu">
+            <a href="https://promotemyshop.com/admin/my-rewards" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fas fa-trophy fa-fw black"></i>
+              <span class="text-white">10,000 pts</span>
+            </a>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle padding-user d-block" data-toggle="dropdown">
+              <div class="riot">
+                <div><i class="fas fa-user"></i> Welcome User <span><i class="fas fa-sort-down"></i></span></div>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="p-t-3 mt-2">
+                <a href="https://promotemyshop.com/admin/my-settings" class="dropdown-item"> <i class="fas fa-user fa-fw"></i> Settings </a>
+              </li>
+              <li class="mt-2 mb-3"><a href="https://promotemyshop.com/" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i> Logout </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+    <!-- Left Navigation -->
+    <aside class="left-side sidebar-offcanvas">
+      <section class="sidebar affix">
+        <div class="left_slim">
+          <div id="menu" class="menu_align" role="navigation">
+
+            <ul class="navigation mt-3">
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span class="mm-text ">My Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-products.html">
+                  <i class="fas fa-boxes"></i>
+                  <span class="mm-text ">My Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="earn-credits.html">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <span class="mm-text ">Earn Credits</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-promotions.html">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="mm-text ">My Promotions</span>
+                </a>
+              </li>
+              <li>
+                <a href="my-rewards.html">
+                  <i class="fas fa-trophy"></i>
+                  <span class="mm-text ">My Rewards </span>
+                </a>
+              </li>
+              <li>
+                <a href="my-settings.html">
+                  <i class="fas fa-user-cog"></i>
+                  <span class="mm-text ">My Settings </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <aside class="right-side">
+      <section class="content-header">
+        <h1>Earn Credits</h1>
+        <ol class="breadcrumb">
+          <li class="active"><i class="fas fa-hand-holding-heart fa-fw"></i> Earn Credits
+        </ol>
+      </section>
+      <section class="content p-l-r-15">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">My Product Promotions</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover" id="table">
+                    <thead>
+                      <tr class="filters">
+                        <th width="10%" class="text-center">&nbsp;</th>
+                        <th width="10%" class="text-center">Photo</th>
+                        <th width="30%">Description</th>
+                        <th width="20%" class="text-center">Social Media</th>
+                        <th width="20%" class="text-center">What</th>
+                        <th width="10%" class="text-center">Rewards</th>
+                      </tr>
+                    </thead>
+                    <tbody class="promote-list">
+                      <tr>
+                        <!--onclick="document.location='#'" style="cursor:pointer" data-toggle="modal" data-target="#modal-product-detail01"-->
+                        <td class="text-center">
+
+
+                          <div class="wrap">
+                            <button type="submit">PROMOTE</button>
+                            <img src="img/check.svg" alt="">
+                            <svg width="66px" height="66px">
+                              <circle class="circle_2" stroke-position="outside" stroke-width="3" fill="none" cx="34" cy="33" r="29" stroke="#1ECD97"></circle>
+                            </svg>
+                          </div>
+
+
+
+
+
+
+                        </td>
+                        <td><img src="https://img.etsystatic.com/il/897aef/1519454834/il_570xN.1519454834_el80.jpg?version=0" width="100px"></td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                        <td class="table-category text-center">
+                          <img src="img/facebook-icon.png" alt="Facebook" width="30px" class="mr-2">
+                          <img src="img/twitter-icon.png" alt="Twitter" width="30px" class="mr-2">
+                          <img src="img/pinterest-icon.png" alt="Pinterest" width="30px" class="mr-2">
+                          <img src="img/etsy-icon.png" alt="Etsy" width="30px" class="mr-2">
+                          <img src="img/instagram-icon.png" alt="Instagram" width="30px" class="mr-2">
+                        </td>
+                        <td>Create new post</td>
+                        <td>100 pts</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 1-->
+        <div id="modal-product-detail01" class="modal fade animated" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Product Detail</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="https://img.etsystatic.com/il/897aef/1519454834/il_570xN.1519454834_el80.jpg?version=0" width="300px">
+                    <div class="d-flex justify-content-center mt-3"><b>Etsy ID:</b> A1234</div>
+                  </div>
+                  <div class="col-md-7">
+                    <h4>4th of July Invitations - 4th of July Barbecue - 4th of July Party - 4th of July Invitation - INSTANT ACCESS to files! Edit with Corjl NOW</h4>
+                    <h5>Description</h5>
+                    <p>4th of July Barbecue Invitations template! Backside design included. No waiting! Edit NOW from home using Corjl.com. ★Try out the 4th of July Invitation DEMO now! Copy and paste the URL below to demo: https://www.corjl.com/orders/demo/JAI38B !</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <button type="submit">PROMOTE</button>
+    <img src="img/check.svg" alt="">
+    <svg width="66px" height="66px">
+      <circle class="circle_2" stroke-position="outside" stroke-width="3" fill="none" cx="34" cy="33" r="29" stroke="#1ECD97"></circle>
+    </svg>
+  </div>
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/users_custom.js"></script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+
+
+
+  <script>
+    $(document).ready(function () {
+      var timer = null;
+      var self = $("button");
+      var clicked = false;
+      $("button").on("click", function () {
+        if (clicked === false) {
+          self.removeClass("filled");
+          self.addClass("circle");
+          self.html("");
+          clicked = true;
+          $("svg").css("display", "block");
+          $(".circle_2").attr("class", "circle_2 fill_circle");
+
+          timer = setInterval(
+            function tick() {
+              self.removeClass("circle");
+              self.addClass("filled");
+              // self.html("b");
+              $(".wrap img").css("display", "block");
+              $("svg").css("display", "none");
+              clearInterval(timer);
+            }, 2500);
+        }
+      });
+    });
+  </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<div v-if="displayUploads" class="mt-2">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+                <div class="my-modal-header">
+                    <button type="button" class="close" v-on:click="displayUploads=false">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <slot name="body">
+                        <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+                            <div class="dropbox">
+                                <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files,$event.target.files.length)" accept="*/*" class="input-file">
+                                <p v-if="isInitial">
+                                    Drag your file(s) here
+                                    <br/> Or
+                                    <br/><a class="btn btn-outline-info">Select files</a>
+                                </p>
+                                <p v-if="isSaving">
+                                    Uploading {{fileCount}} files...
+                                </p>
+                            </div>
+                        </form>
+                    </slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div v-if="displayUploads" class="mt-2">
+    <div class="modal fade animated" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-white">Add File</h4>
+                </div>
+                <div class="modal-body">
+                    <slot name="body">
+                        <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+                            <div class="dropbox">
+                                <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files,$event.target.files.length)" accept="*/*" class="input-file">
+                                <p v-if="isInitial">
+                                    Drag your file(s) here
+                                    <br/> Or
+                                    <br/><a class="btn btn-outline-info">Select files</a>
+                                </p>
+                                <p v-if="isSaving">
+                                    Uploading {{fileCount}} files...
+                                </p>
+                            </div>
+                        </form>
+                    </slot>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div v-if="creatingFile" class="mt-2">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+                <div class="my-modal-header">
+                    <button type="button" class="close" v-on:click="creatingFile=false">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <slot name="body">
+                        <div>
+                            <div class="trigger content-link">
+                                <input v-model="newFileName" placeholder="Enter file name" class="mt-2">
+                            </div>
+                            <div>
+                                <button v-on:click="createFile()" class="btn btn-light mt-2">
+                                    <i class="fas fa-plus"></i> Add File</button>
+                                <button v-on:click="creatingFile=false;displayUploads=true;uploadStatus=0" class="btn btn-light mt-2">
+                                    <i class="fas fa-upload"></i> Upload File</button>
+                                <button v-on:click="creatingFile=false;displayUploads=false" class="btn btn-light mt-2">
+                                    <i class="fas fa-times"></i> Cancel</button>
+                            </div>
+                        </div>
+                    </slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div v-if="creatingFile" class="mt-2">
+    <div class="modal fade animated" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(102, 153, 204);">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-white">Add File</h4>
+                </div>
+                <div class="modal-body">
+                    <slot name="body">
+                        <div>
+                            <div class="trigger content-link">
+                                <input v-model="newFileName" placeholder="Enter file name" class="mt-2">
+                            </div>
+                            <div>
+                                <button v-on:click="createFile()" class="btn btn-light mt-2">
+                                    <i class="fas fa-plus"></i> Add File</button>
+                                <button v-on:click="creatingFile=false;displayUploads=true;uploadStatus=0" class="btn btn-light mt-2">
+                                    <i class="fas fa-upload"></i> Upload File</button>
+                                <button v-on:click="creatingFile=false;displayUploads=false" class="btn btn-light mt-2">
+                                    <i class="fas fa-times"></i> Cancel</button>
+                            </div>
+                        </div>
+                    </slot>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

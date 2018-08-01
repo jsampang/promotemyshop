@@ -1,0 +1,109 @@
+@extends('partial_base')
+@section('content')
+<div id="guide-container" class="ng-scope">
+   <!-- start header with background red -->
+   <section class="header-title red">
+      <div class="container">
+
+         <div class="top-portal-title" style="margin-bottom: 60px;margin-top:42px">
+            <h1 class="top-portal-icon-header" style="color: #ee9122;  text-transform: capitalize !important;">{!! $field_title !!}</h1>
+            <h3 class="portal-subheader" style="color:#121212; border-bottom: 1px solid #ee9122!important;line-height: 26px;font-size: 17px!important;">{!! $field_sub_title !!}.</h3>
+         </div>
+      </div>
+   </section>
+    <section class="config wrap-container-select-platform">
+            <div class="container-select-platform max-width-1300 width-view-maxtrix-table">
+                <div class="top-info-product-matric">
+                    <div>
+                        {!! $field_help !!}
+                    </div>
+
+                    <div>
+                        <div class="line-right-icon-include">
+                
+                            <img alt="" class="icon-inclucded" src="/check.png">
+                            {!! $field_inclucded  !!}
+                        </div>
+                        
+                        <span class="optional-icon"></span> {!! $field_optional !!}
+                    </div>
+                </div>
+                <div id="heightHack"></div>
+                <div class="wrap-area-button-slide-scroll">
+                    <a class="back-scroll button-slide-scroll">
+                         <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a class="next-scroll button-slide-scroll">
+                         <i class="fa fa-chevron-right"></i>
+                    </a>    
+                </div>
+
+                <div id="binding-scroll" class="wrap-manual-table-select-platform clearfix dragscroll">
+
+                    <div id="js_scrollhead" class="pin-head-select-platform pintable">
+                        
+                        <!-- row   1 -->
+                        <template ngFor let-platform [ngForOf]="platforms" let-i="index">
+                          <div class="wrap-images-select-platform" *ngIf = "i == 0">
+                              <product-list
+                                style="display: flex;"
+                                [platformIndexSelected]="platformIndexSelected"
+                                [listInfoPlatform]="platform"
+                              >
+                              </product-list>
+                          </div>
+                       </template>
+                        <!-- end row 1 -->
+                    </div>
+                    
+                    <div class="body-select-platform">
+                     <template ngFor let-platform [ngForOf]="platforms" let-i="index">
+                        <div *ngIf = "i > 0" [ngClass]="{'wrap-select-platform-input': i == 1, 'wrap-item-infor-platform-manual' : i != 1}">
+                            <product-info 
+							    							id="js_product_info_@{{i}}"						
+                                #listPlatformInfo
+                                style="display: flex;"
+                                [platformIndexSelected]="platformIndexSelected" 
+                                (onSelected)="onPlatformSelected($event)" 
+                                [listPlatformInfo]="platform"
+																[index]="i"
+                            >
+                            </product-info>
+                        </div>
+                      </template>
+                    </div>
+                    <template ngFor let-accessory [ngForOf]="accessories" let-i="index">
+                        <div class="section-collapse">
+                           <div id="js_header_category_@{{i}}" class="header-category" [ngStyle]="{'width': getWidthHeaderCategory(i)}">
+                                <a (click)="isCollapsed[i] = !isCollapsed[i]" data-toggle="collapse" data-target="#collapse-@{{i}}">
+                                    <img *ngIf="!isCollapsed[i]" class="show-minus" src="https://cdn.ulsinc.com/assets/images/icon/5763ba3a0454aa0ce66834e2/minus.png" alt="minus">
+                                    <img *ngIf="isCollapsed[i]" class="" src="http://dev.cdn.ulsinc.com/assets/images/icon/5763ba490454aa0e2d5791e3/plus.png" alt="plus">
+                                   @{{ accessory[0] }}
+                                </a>
+                            </div>
+                            <div [collapse]="isCollapsed[i]" class="collapse in" id="collapse-@{{i}}">
+                                <div class="wrap-row-collapse">
+                                        <product-info
+                                          #listPlatformInfo
+                                          [platformIndexSelected]="platformIndexSelected" 
+                                          [listPlatformInfo]="accessory.items"
+                                          [checkAccessory] = "true"
+                                          [index]="i"
+                                        >
+                                        </product-info>
+                                </div>
+                            </div>
+                        </div>
+                    </template>                    
+                </div>
+            </div>
+   </section>
+
+</div>
+@stop
+
+<style>
+.header-category img {
+    margin-right: 8px!important;
+}
+</style>
