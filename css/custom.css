@@ -64,7 +64,7 @@ a:focus {
 }
 
 .modal-open .modal {
-  margin-top: 101px;
+  margin-top: 0px;
 }
 
 @media (min-width: 768px) {

@@ -8,7 +8,31 @@
   <title>Welcome to PromoteMyShop.com</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="css/form-style.css" rel="stylesheet">
+  <link href="css/style-form.css" rel="stylesheet">
+  
+  <style>
+    @media (min-width: 768px) {
+      .modal-dialog {
+        width: 900px !important;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .modal-dialog {
+        max-width: 900px!important;
+        margin: 1.75rem auto;
+      }
+    }
+    .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #532254;
+    color: #fff;
+}
+    .modal-header .close {
+    color: #fff;
+}
+  </style>
 
 </head>
 
@@ -20,12 +44,13 @@
           <div class="card fat">
             <div class="card-body">
               <div class="text-center mb-5"><a href="index.html"><img src="images/logo.png" width="300px" alt="PromoteMyShop.com"></a></div>
+              
               <h5 class="card-title text-center">Create User Name</h5>
               
               <form method="get" action="signup-p1.html">
                 <div class="form-group">
                   <label for="name">Username</label>
-                  <input id="name" type="text" class="form-control" name="name">
+                  <input id="name" type="text" class="form-control" name="name" autofocus>
                 </div>
                 <div class="form-group">
                   <label for="email">E-Mail Address</label>
@@ -39,8 +64,12 @@
 -->
                 <div class="form-group">
                   <label>
-                    <input type="checkbox" name="aggree" value="1"> I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a>
+                    <input type="checkbox" name="agree" value="1"> I agree to the <a href="#" data-toggle="modal" data-target="#terms-of-use">Terms of Use</a> and <a href="#" data-toggle="modal" data-target="#privacy-policy">Privacy Policy.</a>
                   </label>
+                  
+                  
+                  
+                  
                 </div>
                 <div class="form-group no-margin">
                   <button type="submit" class="btn btn-primary btn-block">
@@ -54,18 +83,82 @@
               
             </div>
           </div>
-          <div class="footer">
-            Copyright &copy; 2018 PromoteMyShop.com
-          </div>
+          <div class="footer">Copyright &copy; 2018 PromoteMyShop.com</div>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- Modal Terms of Use-->
+  <div id="terms-of-use" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title">Terms of Use</h4>
+          <p>These Terms and Conditions of Use govern your use of the website located at <a href="https://promotemyshop.com/">promotemyshop.com</a> and your relationship with PromoteMyShop LLC dba PromoteMyShop.com and all individuals and companies associated with this website. Use of our website constitutes your acceptance of the Terms and Conditions. If you do not agree to these Terms and Conditions, do not use our site. We may occasionally change the Terms of Use without notice to you by posting such changes on our site. By using our site following any modifications to these terms, you agree to be bound by any modifications.</p>
+          <h4>Copyrights</h4>
+          <p>All content and functionality on the site, including text, graphics, logos, icons, and images and the selection and arrangement thereof, is the exclusive property of PromoteMyShop.com or its licensors and is protected by U.S. and international copyright laws. All rights not expressly granted are reserved.</p>
+          <h4>Trademarks</h4>
+          <p>The trademarks, service marks, designs, and logos (Trademarks) displayed on our site are the registered and unregistered Trademarks of PromoteMyShop.com and its licensors. You agree that you will not refer to or attribute any information to PromoteMyShop.com or its licensors in any public medium (e.g., press release, websites) for advertising or promotion purposes, or for the purpose of informing or influencing any third party and that you will not use or reproduce any Trademark of, or imply any endorsement by or relationship with, PromoteMyShop.com or its licensors.</p>
+          <h4>Use of Site Content</h4>
+          <p>PromoteMyShop.com grants you the ability to access and download, display and print one copy of the content and functionality displayed on our website as long as you do not modify the content in any way and that you retain all copyright and other proprietary notices. You may not otherwise reproduce, modify, distribute, transmit, post, or disclose our website content without our written consent.</p>
+          <h4>Disclaimer</h4>
+          <p>Our site’s content and functionality is provided with the understanding that PromoteMyShop.com is not rendering professional advice and services to you. All content and functionality is provided “as is” without warranty of any kind. PromoteMyShop.com has no liability or responsibility for any information published on linked websites, contained in any of our published content or provided by third parties. PromoteMyShop.com will not be liable for any indirect, incidental, consequential, or punitive damages or for lost revenues or profits regardless of the theory of liability.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Privacy Policy-->
+  <div id="privacy-policy" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title">Privacy Policy</h4>
+          <h4>PromoteMyShop.com LLC dba PromoteMyShop.com Privacy Statement</h4>
+          <p>We are firmly committed to protecting the privacy of visitors to our website – PromoteMyShop.com. This Privacy Statement outlines our web information gathering and distribution practices. By submitting your information via our website, you agree to our use of that information as described in this statement. Please read our Terms of Use for additional information.</p>
+          <h4>Minors</h4>
+          <p>We understand the importance of protecting children’s privacy. We consider anyone under the age of 18 to be a minor and therefore not eligible for our services. We ask that no one under the age of 18 submit any personal information to us.</p>
+          <h4>IP Addresses and Cookies</h4>
+          <p>We use your IP address to help diagnose problems with our server, and to administer our website. Your IP address is also used to gather broad demographic information.</p>
+          <p>Cookies are small pieces of text stored on your computer (not our site) that help us know which browser you’re using and where you’ve been on our site. Most cookies are “session cookies” which means they’re automatically deleted at the end of each session. A cookie itself does not have the ability to automatically collect personal information about you. A cookie can store certain information that identifies your computer to us so that you don’t have to re-enter information as frequently when you use our site.</p>
+          <h4>Your Requests for Information</h4>
+          <p>PromoteMyShop.com uses your personal information to fulfill your requests for information. We may keep any of your personal details on file and use them to contact you. We may also use your personal information in analyzing website user behavior in order to measure interest in specific items.</p>
+          <p>If you fill out one of our "Contact Us" pages, you’ll be required to enter your name and e-mail address. We will use this information to provide you with more information about PromoteMyShop.com and its services. From time to time, we email our users to announce a promotion or a change in our service. You may opt-out of mailings at any time by replying to the email with your opt out request.</p>
+          <p>If you send us emails or letters, or if third parties send us correspondence about your activities or postings on our site, we may collect that information into a file and use it to resolve disputes, troubleshoot problems and enforce our Terms of Use agreement.</p>
+          <h4>Disclosure Policy</h4>
+          <p>This Privacy Statement authorizes us to disclose any information about you to law enforcement or other government officials as we, in our sole discretion, believe necessary or appropriate in connection with an investigation of fraud, intellectual property infringements, or other activity that is illegal or may expose us to legal liability.</p>
+          <h4>Links</h4>
+          <p>For your convenience, our site contains links to other websites of interest. We are not responsible for the privacy practices or the content of the linked sites.</p>
+          <h4>Security</h4>
+          <p>We have security measures in place on our site to protect the loss, misuse and alteration of the information under our control. We store and encrypt all user information on our server; however, we cannot guarantee unauthorized access as there is no such thing as flawless internet security.</p>
+          <h4>Questions</h4>
+          <p>If you have questions about this Privacy Statement or would like to be removed from our database or future correspondence, please contact us at <a href="mailto:info@promotemyshop.com">info@promotepmyshop.com</a>.</p>
+          <p>By using our website, you agree to the collection, use, and storage of your information by us in the manner described in this Privacy Statement and elsewhere on the website. We reserve the right to make changes to this policy at our discretion.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/stripe.js"></script>
+  <script src="js/user-custom.js"></script>
 
 </body>
 
