@@ -20,43 +20,33 @@
           <div class="card fat">
             <div class="card-body">
               <div class="text-center mb-5"><a href="index.html"><img src="images/logo.png" width="300px" alt="PromoteMyShop.com"></a></div>
-              <h5 class="card-title text-center">Create User Name</h5>
-              
-              <form method="get" action="signup-p1.html">
+              <h5 class="card-title text-center">Credit Card Information</h5>
+
+              <form>
                 <div class="form-group">
-                  <label for="name">Username</label>
+                  <label for="name">Name as it appears on your card</label>
                   <input id="name" type="text" class="form-control" name="name">
                 </div>
-                <div class="form-group">
-                  <label for="email">E-Mail Address</label>
-                  <input id="email" type="email" class="form-control" name="email">
-                </div>
-                <!--
-								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
-								</div>
--->
-                <div class="form-group">
-                  <label>
-                    <input type="checkbox" name="aggree" value="1"> I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a>
-                  </label>
-                </div>
-                <div class="form-group no-margin">
-                  <button type="submit" class="btn btn-primary btn-block">
-                    Submit
-                  </button>
-                </div>
-                <div class="margin-top20 text-center">
-                  Already have an account? <a href="login.html">Login</a>
+                <script src="https://js.stripe.com/v3/"></script>
+                <form action="/charge" method="post" id="payment-form">
+                  <div class="form-group">
+                    <label for="name">Credit Card Number</label>
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                  </div>
+                </form>
+                <div class="text-center"><img src="images/credit-card-icons.png" alt="credit card" width="150px"></div>
+                
+                <div class="form-group no-margin d-flex justify-content-center mt-5">
+                  <a href="signup-p1.html" class="btn btn-primary mr-2"><i class="fas fa-chevron-left"></i> Back</a>     
+                  <a href="signup-p3.html" class="btn btn-primary mr-2"> Next <i class="fas fa-chevron-right"></i></a>
+                  <!--<button type="submit" class="btn btn-primary">Next <i class="fas fa-chevron-right"></i></button>-->
                 </div>
               </form>
-              
+
             </div>
           </div>
-          <div class="footer">
-            Copyright &copy; 2018 PromoteMyShop.com
-          </div>
+          <div class="footer">Copyright &copy; 2018 PromoteMyShop.com</div>
         </div>
       </div>
     </div>
