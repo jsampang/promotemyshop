@@ -100,3 +100,33 @@ body.my-login-page {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+/*=== Pop Up Modal ==*/
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 900px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 900px !important;
+    margin: 1.75rem auto;
+  }
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #532254;
+  color: #fff;
+}
+
+.modal-header .close {
+  color: #fff;
+}
+
+a:focus {
+outline: none !important;
+}
